@@ -1,0 +1,32 @@
+    <h1> Welcome to the first setup from Blocks</h1>
+    <p>
+    To start using the application it is necessary provide some basic details, the address of database server, the database name, user and password to access.
+    </p>
+
+    <form>
+        <ul>
+            <li>
+                Database address:
+                <input type="text" name="address">
+            </li>
+            <li>
+                Database name:
+                <input type="text" name="name">
+            </li>
+            <li>
+                Database username:
+                <input type="text" name="username">
+            </li>
+            <li>
+                Database password:
+                <input type="text" name="password">
+            </li>
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </form>
+
+    <p>
+        Blocks application will handle the tables and all database stuff from here.
+    </p>

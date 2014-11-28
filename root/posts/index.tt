@@ -1,0 +1,2 @@
+
+[% INCLUDE posts/edit.tt %]
