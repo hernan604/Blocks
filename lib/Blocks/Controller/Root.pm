@@ -38,20 +38,19 @@ sub index :Path :Args(0) {
     my $model_rs = $c->model( 'Blocks::User' );
 
     if ( $c->config->{ Boot } != "done" ){
-        $c->config->{ Boot } = "done";
         $c->stash({
             template => "boot.tt"
         });
     }else {
-        $c->response->body( Dumper $c->config );
+        #$c->response->body( Dumper $c->config );
         if ( $c->user() ) {
         }else{
         }
+        my $blocks_rs = $c->model( "Blocks::Block" );
+        my @blocks = $blocks_rs->search({ title => "Hotline miami" });
+        $c->response->body ( Dumper \@blocks );
     }
-
 }
-
-
 
 sub boot :Local {
     my ( $self, $c ) = @_;
@@ -61,13 +60,32 @@ sub boot :Local {
     my $username = $c->request->param("username");
     my $password = $c->request->param("password");
 
-    $c->config->{ Model::Blocks }{ connect_info }{ dsn } = "dbi:mysql:$name:$address";
-    $c->config->{ Model::Blocks }{ connect_info }{ username } = $username;
-    $c->config->{ Model::Blocks }{ connect_info }{ password } = $password;
+    $c->config->{ "Model::Blocks" }{ connect_info }{ dsn } = "dbi:mysql:$name:$address";
+    $c->config->{ "Model::Blocks" }{ connect_info }{ user } = $username;
+    $c->config->{ "Model::Blocks" }{ connect_info }{ password } = $password;
 
     try{
-        my $blocks_rs = $c->model( "Blocks::posts" );
+        #my $schema = Blocks::Schema->connect_info( [ $c->config->{ "Model::Blocks" }{ connect_info } ]);
+        #my $blocks_rs = $c->model( "Blocks::Block" );
+
+        # worked
+        #my $schema = $c->model( "Blocks" )->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
+        #my $blocks_rs = $schema->resultset( "Block");
+
+        $c->model( "Blocks::Block" ) = Blocks::Schema->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
+        my $blocks_rs = $c->model( "Blocks::Block" );
+
+        print Dumper $blocks_rs;
+        my $newpost = $blocks_rs->create({
+            title => "Hotline miami",
+        });
+        if ( $newpost ) {
+            $c->response->body("worked");
+            $c->config->{ Boot } = "done";
+        }
     }catch{
+            $c->response->body("try over   $_" . Dumper $c->config->{ "Model::Blocks" });
+            #$c->response->body ( Dumper $c->config );
     };
 }
 

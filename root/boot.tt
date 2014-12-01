@@ -3,7 +3,7 @@
     To start using the application it is necessary provide some basic details, the address of database server, the database name, user and password to access.
     </p>
 
-    <form>
+    <form method="POST" action="/boot">
         <ul>
             <li>
                 Database address:
