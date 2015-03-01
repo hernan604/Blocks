@@ -1,4 +1,8 @@
-use imovlr_blocks;
+SET @database='Blocks';
+
+CREATE DATABASE IF NOT EXISTS @database;
+
+use @database;
 
 CREATE TABLE  IF NOT EXISTS User (
   uid int(10) unsigned NOT NULL,
