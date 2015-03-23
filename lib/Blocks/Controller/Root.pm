@@ -37,7 +37,9 @@ sub index :Path :Args(0) {
 
     my $model_rs = $c->model( 'Blocks::User' );
 
-    if ( $c->config->{ Boot } != "done" ){
+    print Dumper $c->config;
+
+    if ( $c->config->{ Boot } ne "done" ){
         $c->stash({
             template => "boot.tt"
         });
@@ -48,7 +50,13 @@ sub index :Path :Args(0) {
         }
         my $blocks_rs = $c->model( "Blocks::Block" );
         my @blocks = $blocks_rs->search({ title => "Hotline miami" });
-        $c->response->body ( Dumper \@blocks );
+
+        $c->stash({
+            template => "blocks.tt",
+            blocks   => \@blocks,
+        });
+        
+        #$c->response->body ( Dumper \@blocks );
     }
 }
 
@@ -69,11 +77,11 @@ sub boot :Local {
         #my $blocks_rs = $c->model( "Blocks::Block" );
 
         # worked
-        #my $schema = $c->model( "Blocks" )->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
-        #my $blocks_rs = $schema->resultset( "Block");
+        my $schema = $c->model( "Blocks" )->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
+        my $blocks_rs = $schema->resultset( "Block");
 
-        $c->model( "Blocks::Block" ) = Blocks::Schema->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
-        my $blocks_rs = $c->model( "Blocks::Block" );
+        #$c->model( "Blocks::Block" ) = Blocks::Schema->connect( $c->config->{ "Model::Blocks" }{ connect_info }  );
+        #my $blocks_rs = $c->model( "Blocks::Block" );
 
         print Dumper $blocks_rs;
         my $newpost = $blocks_rs->create({
