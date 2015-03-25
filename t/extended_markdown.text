@@ -1,0 +1,19 @@
+
+This is the basic test of markdown
+==================================
+
+It uses a mixture of markdown and
+---------------------------------
+
+Blocks, it seems that this paragraph will be build as paragraph.
+But sometimes we want to build more complex documents, so we
+need to link with other markdown documents, now the solution is
+
+* I don't know yet
+* build a complex system on that
+
+Create a simple link structure
+
+<blocks://documentname>
+
+<http://uol.com.br>

@@ -1,0 +1,9 @@
+index renders block1
+
+block1 = block_one.tt
+
+Just use plain markdown, linking with the blocks
+
+
+    
+

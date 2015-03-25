@@ -1,0 +1,4 @@
+>
+[% FOREACH block IN blocks %]
+    [% INCLUDE block.tt %]
+[% END %]
