@@ -9,6 +9,12 @@ use Module::Install::Catalyst; # Complain loudly if you don't have
 name 'Blocks';
 all_from 'lib/Blocks.pm';
 
+requires 'MooseX::NonMoose';
+requires 'Catalyst::View::TT';
+requires 'Catalyst::Authentication::Store::DBIx::Class';
+requires 'Catalyst::Plugin::Authentication';
+requires 'Catalyst::Plugin::Session::Store::FastMmap';
+requires 'Catalyst::Plugin::Session::State::Cookie';
 requires 'Catalyst::Runtime' => '5.90053';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
