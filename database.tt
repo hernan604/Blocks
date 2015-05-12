@@ -1,3 +1,7 @@
+[% namespace = 'Model::Blocks' %]
+[% database = config.$namespace.connect_info.database %]
+
+
 CREATE DATABASE IF NOT EXISTS [% database %]
 
 USE [% database %]
