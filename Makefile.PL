@@ -9,6 +9,7 @@ use Module::Install::Catalyst; # Complain loudly if you don't have
 name 'Blocks';
 all_from 'lib/Blocks.pm';
 
+requires 'HTTP::AcceptLanguage';
 requires 'MooseX::NonMoose';
 requires 'Catalyst::View::TT';
 requires 'Catalyst::Authentication::Store::DBIx::Class';
