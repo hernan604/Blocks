@@ -39,6 +39,8 @@ sub login_GET {
     if ( $c->user() ){
         $c->response->body( "redirect to last page" );
     }else{
+        # There is no user
+        
         $c->stash();
     }
 }
@@ -62,6 +64,19 @@ sub logout :Local{
     $c->logout() if $c->user();
 
     $c->response->redirect('/auth/login');
+}
+
+sub user :Local :ActionClass( 'REST' ) { }
+
+sub user_GET {
+    my ( $self, $c ) = @_;
+
+    my $user_rs = $c->model( 'Blocks::User' );
+    if ( ! $c->user() and $user_rs->all > 0 ){
+        $c->response->redirect('/');
+    }else{
+        $c->stash();
+    }
 }
 
 
