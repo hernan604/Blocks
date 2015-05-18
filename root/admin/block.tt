@@ -1,1 +1,24 @@
-[% WRAPPER ../index.tt title = "Block Admin"; block = block; END %]
+[% WRAPPER admin/index.tt title = "Block Admin" %]
+
+<form METHOD="POST">
+    <ul>
+        <li>
+            Title:
+            <input type="text" name="title"
+            value="[% block.title %]">
+        </li>
+        <li>
+            Content:
+        </li>
+        <li>
+            <textarea name="content" rows="30" cols="60">
+            [% block.content %]
+            </textarea>
+        </li>
+        <li>
+            <input type="submit">
+        </li>
+    </ul>
+</form>
+
+[% END %]
