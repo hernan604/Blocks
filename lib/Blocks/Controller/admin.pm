@@ -25,7 +25,7 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->response->body('Matched Blocks::Controller::admin in admin.');
+    $c->response->redirect( '/admin/block' );
 }
 
 sub block :Local :ActionClass('REST') { }
@@ -49,7 +49,28 @@ sub block_GET :Args(1){
             
         );
     }
+}
 
+sub block_POST :Args(1) {
+    my ( $self, $c, $arg ) = @_;
+
+    my $title = $c->request->param("title");
+    my $content = $c->request->param("content");
+
+    my $block_rs = $c->model( 'Blocks::Block' );
+    my $block;
+    if ( $arg ){
+        $block = $block_rs->find($arg);
+        $block->title( $title );
+        $block->content( $content );
+        $block->update();
+    }else{
+        $block->create({
+            title => $title,
+            content => $content,
+        });
+    }
+    $c->response->redirect( '/admin/block/'. $block->idblock() );
 }
 
 
