@@ -1,0 +1,1 @@
+[% WRAPPER ../index.tt title = "Block Admin"; block = block; END %]
