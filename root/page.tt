@@ -1,8 +1,1 @@
 [% WRAPPER index.tt title = page.title; block = block; END %]
-
-<script>
-        loadXMLDoc(3)
-</script>
-<div id="myDiv">
-</div>
-

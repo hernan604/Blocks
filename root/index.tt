@@ -2,26 +2,25 @@
     <head>
         <title>[% title %]</title>
         <script>
-function loadXMLDoc(block)
+function loadBlock(block)
 {
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    var xmlhttp;
+    xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
     {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var newDiv = document.createElement('div');
+            var divname = 'block_'.concat(block);
+            newDiv.id = divname;
+            newDiv.className = divname;
+            document.getElementById("main").appendChild(newDiv);
+
+            document.getElementById(divname).innerHTML=xmlhttp.responseText;
+        }
     }
-  }
-xmlhttp.open("GET","/block/".concat(block),true);
-xmlhttp.send();
+    xmlhttp.open("GET","/block/".concat(block),true);
+    xmlhttp.send();
 }
         </script>
     </head>
@@ -30,6 +29,5 @@ xmlhttp.send();
         <div id="main">
             [% block %]
         </div>
-        [% content %]
     </body>
 </html>
