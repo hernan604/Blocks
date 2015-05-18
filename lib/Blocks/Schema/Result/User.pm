@@ -42,6 +42,7 @@ __PACKAGE__->table("User");
 
   data_type: 'integer'
   extra: {unsigned => 1}
+  is_auto_increment: 1
   is_nullable: 0
 
 =head2 email
@@ -66,7 +67,12 @@ __PACKAGE__->table("User");
 
 __PACKAGE__->add_columns(
   "uid",
-  { data_type => "integer", extra => { unsigned => 1 }, is_nullable => 0 },
+  {
+    data_type => "integer",
+    extra => { unsigned => 1 },
+    is_auto_increment => 1,
+    is_nullable => 0,
+  },
   "email",
   { data_type => "varchar", is_nullable => 1, size => 255 },
   "password",
@@ -114,8 +120,8 @@ __PACKAGE__->add_unique_constraint("email_UNIQUE", ["email"]);
 __PACKAGE__->add_unique_constraint("token_UNIQUE", ["token"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-11-26 05:25:26
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:XDR/qGkXMwFmtnmuEUpTVQ
+# Created by DBIx::Class::Schema::Loader v0.07043 @ 2015-05-18 07:36:32
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:jV59yCTyWXVvABBfCsx/fA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
