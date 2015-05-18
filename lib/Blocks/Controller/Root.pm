@@ -5,6 +5,7 @@ use namespace::autoclean;
 use Data::Dumper;
 
 use HTTP::AcceptLanguage;
+use Text::Markdown 'markdown';
 use Try::Tiny;
 
 BEGIN { extends 'Catalyst::Controller' }
@@ -33,18 +34,74 @@ The root page (/)
 
 =cut
 
+my @supported_languages = qw/en pt/;
+
 sub begin :Private {
     my ( $self, $c ) = @_;
 
-    $c->session->{ lang } = HTTP::AcceptLanguage->new($_)->match( qw/ en pt / );
+    $c->session->{ lang } = HTTP::AcceptLanguage->new($_)->match(
+        @supported_languages
+    );
 
 }
-
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->response->body('Matched Blocks::Controller::setup in setup.');
+    # redirect to block 1
+
+    $c->response->redirect( '/block/1' );
+}
+
+sub block :Path( '/block' ) :Args(1) {
+    my ( $self, $c , $arg ) = @_;
+
+    my $block = _block( @_ );
+
+    if ( $block ) {
+        $c->response->body( markdown $block->content() );
+    }else{
+        $c->response->status(404);
+    }
+}
+
+sub page :Local :Args(1) {
+    my ( $self, $c , $arg ) = @_;
+
+    my $block = _block( @_ );
+
+    if ( $block ) {
+        $c->stash( {
+            block =>  markdown( $block->content() ),
+            page => {
+                title => $block->title(),
+            }
+        });
+    }else{
+        $c->response->status(404);
+    }
+}
+
+sub _block {
+    my ( $self, $c , $arg ) = @_;
+
+    my $block_rs = $c->model( 'Blocks::Block' );
+    my $language_rs = $c->model( 'Blocks::Language' );
+
+    my $id = $language_rs->find({
+        idblocks => $arg,
+        language => $c->session->{ lang },
+    });
+
+    my $block;
+
+    if ( $id ) {
+        $block = $block_rs->find($id->linked_block);
+    }else{
+        $block = $block_rs->find($arg);
+    }
+
+    return $block;
 }
 
 
