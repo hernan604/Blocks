@@ -57,7 +57,7 @@ __PACKAGE__->config( 'Plugin::Authentication' =>
             },
             store => {
                 class => 'DBIx::Class',
-                user_model => 'Users::User',
+                user_model => 'Blocks::User',
             },
         }
     }

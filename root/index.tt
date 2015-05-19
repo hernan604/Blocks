@@ -27,7 +27,7 @@ function loadBlock(block)
     <body>
         <h1> [% title %] </h1>
         <div id="main">
-            [% block %]
+            [% content %]
         </div>
     </body>
 </html>

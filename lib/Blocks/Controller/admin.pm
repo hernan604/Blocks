@@ -27,6 +27,7 @@ sub begin :Private {
     my ( $self, $c ) = @_;
 
     if (! $c->user() ){
+        $c->session->{ return_uri } = $c->request->uri;
         $c->response->redirect( '/auth/login' );
     }
 }
