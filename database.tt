@@ -1,12 +1,19 @@
 [% namespace = 'Model::Blocks' %]
 [% database = config.$namespace.connect_info.database %]
 
-
 CREATE DATABASE IF NOT EXISTS [% database %];
 
 USE [% database %];
 
-CREATE TABLE  IF NOT EXISTS User (
+CREATE TABLE IF NOT EXISTS `Blocks` (
+  `idblock` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `content` text,
+  PRIMARY KEY (`idblock`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `User` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -14,13 +21,13 @@ CREATE TABLE  IF NOT EXISTS User (
   PRIMARY KEY (`uid`),
   UNIQUE KEY `token_UNIQUE` (`token`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=Latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS Blocks (
-  idblock int(10) unsigned NOT NULL AUTO_INCREMENT,
-  title varchar(255) DEFAULT NULL,
-  timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  content text,
-  PRIMARY KEY ( idblock )
-) ENGINE=InnoDB DEFAULT CHARSET=Latin1;
+
+CREATE TABLE IF NOT EXISTS `Languages` (
+  `idblocks` int(10) unsigned NOT NULL,
+  `language` varchar(9) NOT NULL,
+  `linked_block` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`idblocks`,`language`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
