@@ -1,0 +1,21 @@
+<ul>
+    <li>
+        Languages for this block:
+        [% idblock %]
+    </li>
+    <li>
+        <form method="POST">
+            <input type="text" name="language" value="">
+            <input type="submit">
+        </form>
+    </li>
+[% FOREACH language IN languages %]
+    <li>
+        [% language.idblocks %] ::
+        [% language.language %] ::
+        <a href="/admin/block/[% language.linked_block %]">
+        [% language.linked_block %]
+        </a>
+    </li>
+[% END %]
+</ul>
