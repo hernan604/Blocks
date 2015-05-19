@@ -26,7 +26,9 @@ Catalyst Controller.
 sub begin :Private {
     my ( $self, $c ) = @_;
 
-    $c->session->{ admin } = "admin";
+    if (! $c->user() ){
+        $c->response->redirect( '/auth/login' );
+    }
 }
 
 # login

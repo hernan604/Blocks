@@ -24,5 +24,3 @@ if ( -e $ARGV[0] ){
     die "Need to receive a valid file as argument";
 }
 
-
-#print Dumper $block->{ 'Model::Blocks' }{ 'connect_info' };

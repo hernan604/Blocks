@@ -24,9 +24,7 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    if ( $c->user() ){
-        $c->response->redirect( '/' );
-    }else{
+    if (! $c->user() ){
         $c->response->redirect( '/auth/login' );
     }
 }
@@ -36,13 +34,7 @@ sub login :Local :ActionClass('REST') { }
 sub login_GET {
     my ( $self, $c ) = @_;
 
-    if ( $c->user() ){
-        $c->response->body( "redirect to last page" );
-    }else{
-        # There is no user
-        
-        $c->stash();
-    }
+    $c->stash();
 }
 
 sub login_POST {
@@ -61,24 +53,10 @@ sub login_POST {
 sub logout :Local{
     my ( $self, $c ) = @_;
 
-    $c->logout() if $c->user();
+    $c->logout();
 
     $c->response->redirect('/auth/login');
 }
-
-sub user :Local :ActionClass( 'REST' ) { }
-
-sub user_GET {
-    my ( $self, $c ) = @_;
-
-    my $user_rs = $c->model( 'Blocks::User' );
-    if ( ! $c->user() and $user_rs->all > 0 ){
-        $c->response->redirect('/');
-    }else{
-        $c->stash();
-    }
-}
-
 
 =encoding utf8
 
