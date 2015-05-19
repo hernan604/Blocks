@@ -50,7 +50,7 @@ sub index :Path :Args(0) {
 
     # redirect to block 1
 
-    $c->response->redirect( '/block/1' );
+    $c->response->redirect( '/page/1' );
 }
 
 sub block :Path( '/block' ) :Args(1) {
