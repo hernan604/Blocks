@@ -7,11 +7,12 @@ USE [% database %];
 
 CREATE TABLE IF NOT EXISTS `Blocks` (
   `idblock` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `content` text,
-  PRIMARY KEY (`idblock`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`idblock`),
+  UNIQUE KEY `title_UNIQUE` (`title`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `User` (
   `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
