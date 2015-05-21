@@ -49,7 +49,6 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     # redirect to block 1
-
     $c->response->redirect( '/page/1' );
 }
 
@@ -62,6 +61,7 @@ sub block :Path( '/block' ) :Args(1) {
         $c->response->body( markdown $block->content() );
     }else{
         $c->response->status(404);
+        $c->response->body( 'Block not found' );
     }
 }
 
@@ -79,6 +79,7 @@ sub page :Local :Args(1) {
         });
     }else{
         $c->response->status(404);
+        $c->response->body( 'Page not found' );
     }
 }
 
