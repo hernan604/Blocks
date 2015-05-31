@@ -80,6 +80,7 @@ sub block_POST :Args(1) {
             $block->update();
         }else{
             $c->response->code( 500 );
+            die;
         }
     }else{
         $block = $block_rs->create({
