@@ -32,3 +32,17 @@ CREATE TABLE IF NOT EXISTS `Languages` (
   PRIMARY KEY (`idblocks`,`language`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE IF NOT EXISTS `Tags` (
+  `idtag` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`idtag`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `TagsBlocks` (
+  `idtag` int(10) unsigned NOT NULL,
+  `idblock` int(10) unsigned NOT NULL,
+   PRIMARY KEY (`idtag`,`idblock`),
+   CONSTRAINT `fk_TagsBlocks_1` FOREIGN KEY (`idtag`) REFERENCES `Tags` (`idtag`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
