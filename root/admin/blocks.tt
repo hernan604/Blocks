@@ -1,4 +1,4 @@
-[% WRAPPER admin/index.tt title = "Block Admin" %]
+[% WRAPPER index.tt title = "Block Admin" %]
 
 <div id="help">
     <ul>

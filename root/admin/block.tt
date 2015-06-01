@@ -1,4 +1,4 @@
-[% WRAPPER admin/index.tt title = "Block Admin" %]
+[% WRAPPER index.tt title = "Block Admin" %]
 
 <div id="help">
     <ul>
@@ -25,26 +25,38 @@
 </div>
 
 <div id="languages">
-    <script>loadLanguages([% block.idblock  %])</script>
+    <script>loadLanguages([% block.idblock %])</script>
 </div>
 
-<form METHOD="POST">
-    <ul>
-        <li>
-            Title:
-            <input type="text" name="title"
-            value="[% block.title %]">
-        </li>
-        <li>
-            Content:
-        </li>
-        <li>
-            <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
-        </li>
-        <li>
-            <input type="submit">
-        </li>
-    </ul>
-</form>
+<div id="block">
+    <form METHOD="POST">
+        <ul>
+            <li>
+                Title:
+                <input type="text" name="title"
+                value="[% block.title %]">
+            </li>
+            <li>
+                Content:
+            </li>
+            <li>
+                <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
+            </li>
+            <li>
+                <div id="tagsblocks">
+                    <script>load("tagsblocks",[% block.idblock %])</script>
+                </div>
+            </li>
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div id="main">
+    <h1> Preview: </h1>
+    <script>loadBlock([% block.idblock %])</script>
+</div>
 
 [% END %]
