@@ -49,7 +49,8 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     # redirect to block 1
-    $c->response->redirect( '/page/1' );
+    my $block = $self->_block( $c, 1 );
+    $c->response->redirect( '/page/' . $block->idblock() );
 }
 
 sub block :Path( '/block' ) :Args(1) {
