@@ -1,0 +1,6 @@
+<form action="/admin/tags" method="POST">
+    <input type="text" name="name">
+</form>
+[% FOREACH tag IN tags %]
+    [% tag.name %],
+[% END %]
