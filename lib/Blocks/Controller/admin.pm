@@ -143,7 +143,7 @@ sub languages_POST :Args(1) {
     my ( $block, $lang );
 
     $block = $block_rs->create({
-        title => undef,
+        title => $arg,
         content => undef,
     });
     $block->update();
