@@ -58,8 +58,10 @@ sub block :Path( '/block' ) :Args(1) {
 
     my $block = _block( @_ );
 
+    my $content = $self->_render( $c, $block );
+
     if ( $block ) {
-        $c->response->body( markdown $block->content() );
+            $c->response->body( $content );
     }else{
         $c->response->status(404);
         $c->response->body( 'Block not found' );
@@ -71,9 +73,11 @@ sub page :Local :Args(1) {
 
     my $block = _block( @_ );
 
+    my $content = $self->_render( $c, $block );
+
     if ( $block ) {
         $c->stash( {
-            block =>  markdown( $block->content() ),
+            block =>  $content,
             page => {
                 title => $block->title(),
             }
@@ -82,6 +86,24 @@ sub page :Local :Args(1) {
         $c->response->status(404);
         $c->response->body( 'Page not found' );
     }
+}
+
+sub _render{
+    my ( $self, $c , $block ) = @_;
+
+    if ( $block->type() eq 'markdown' ){
+        return markdown $block->content();
+    }else{
+        my $output;
+        # TODO search by title
+        for my $line ( split ( '\n', $block->content() ) ){
+            chomp $line;
+            my $block = $self->_block( $c, $line );
+            $output .= markdown $block->content();
+        }
+        return $output;
+    }
+
 }
 
 sub _block {
