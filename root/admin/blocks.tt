@@ -18,33 +18,29 @@
     </ul>
 </div>
 
+<div id="block_search">
+    <form METHOD="POST">
+        <input type="text" name="title">
+        <input type="submit">
+    </form>
+</div>
+
 <div>
     <a href="/admin/block">
         Add a new block
     </a>
 </div>
 
-<div id="languages">
-    <script>loadLanguages([% block.idblock  %])</script>
-</div>
-
-<form METHOD="POST">
+<div>
     <ul>
-        <li>
-            Title:
-            <input type="text" name="title"
-            value="[% block.title %]">
-        </li>
-        <li>
-            Content:
-        </li>
-        <li>
-            <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
-        </li>
-        <li>
-            <input type="submit">
-        </li>
+[% FOREACH block IN blocks %]
+    <li>
+        <a href="/admin/block/[% block.idblock %]">
+        [% block.title %]
+        </a>
+    </li>
+[% END %]
     </ul>
-</form>
+</div>
 
 [% END %]

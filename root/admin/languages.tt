@@ -4,14 +4,15 @@
         [% idblock %]
     </li>
     <li>
-        <form method="POST">
+        <form action="/admin/languages/[% idblock %]" method="POST">
             <input type="text" name="language" value="">
             <input type="submit">
         </form>
     </li>
 [% FOREACH language IN languages %]
     <li>
-        [% language.idblocks %] ::
+        <a href="/admin/block/[% language.idblocks %]">
+        [% language.idblocks %]  <a/> ::
         [% language.language %] ::
         <a href="/admin/block/[% language.linked_block %]">
         [% language.linked_block %]
