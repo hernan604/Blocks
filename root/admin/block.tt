@@ -32,6 +32,13 @@
     <form METHOD="POST">
         <ul>
             <li>
+                type:
+                <select name="type">
+                    <option value="markdown">Markdown</option>
+                    <option value="blocks">Blocks</option>
+                </select>
+            </li>
+            <li>
                 Title:
                 <input type="text" name="title"
                 value="[% block.title %]">

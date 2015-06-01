@@ -92,12 +92,14 @@ sub block_POST :Args(1) {
 
     my $title = $c->request->param("title");
     my $content = $c->request->param("content");
+    my $type = $c->request->param("type");
 
     my $block_rs = $c->model( 'Blocks::Block' );
     my $block;
     if ( $arg ){
         $block = $block_rs->find($arg);
         if ( $block ) {
+            $block->type( $type );
             $block->title( $title );
             $block->content( $content );
             $block->update();
