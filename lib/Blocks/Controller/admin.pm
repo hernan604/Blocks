@@ -46,7 +46,7 @@ sub blocks_GET {
 
     my $block_rs = $c->model( 'Blocks::Block' );
 
-    my @blocks = $block_rs->search({},{ rows => 2 });
+    my @blocks = $block_rs->search({},{ rows => 10 });
 
     $c->stash( blocks => \@blocks );
 
@@ -75,8 +75,6 @@ sub block_GET :Args(1){
     if ( $arg ) {
         $block = $block_rs->find($arg);
     }
-
-    print Dumper $c->session;
 
     if ( $block ){
         $c->stash(
@@ -157,6 +155,72 @@ sub languages_POST :Args(1) {
     $c->response->redirect( '/admin/block/' .  $block->idblock() );
 
 }
+
+# makes more sense chained
+
+sub tags :Local :ActionClass('REST') { }
+
+sub tags_GET{
+    my ( $self, $c, $arg ) = @_;
+
+    my $tags_rs = $c->model( 'Blocks::Tag' );
+
+    my @tags = $tags_rs->all;
+
+    $c->stash( tags => \@tags );
+
+}
+
+sub tags_POST{
+    my ( $self, $c, $arg ) = @_;
+
+    my $tag = $c->request->param('name');
+
+    my $tags_rs = $c->model( 'Blocks::Tag' );
+    my $tagsblock_rs = $c->model( 'Blocks::TagsBlock' );
+
+    my $tag_object = $tags_rs->create({ name => $tag });
+
+    $c->response->redirect( '/admin/tags/');
+}
+
+sub tagsblocks :Local :ActionClass('REST') { }
+
+sub tagsblocks_GET :Args(1) {
+    my ( $self, $c, $arg ) = @_;
+
+    my $tags_rs = $c->model( 'Blocks::Tag' );
+    my $tagsblock_rs = $c->model( 'Blocks::TagsBlock' );
+
+    my @tags = $tagsblock_rs->search({ idblock => $arg });
+    print Dumper $tags[0]->tag;
+    $c->stash({ tags => \@tags, idblock => $arg });
+}
+
+sub tagsblocks_POST :Args(1) {
+    my ( $self, $c, $arg ) = @_;
+
+    my $tags_rs = $c->model( 'Blocks::Tag' );
+    my $tagsblock_rs = $c->model( 'Blocks::Tagsblock' );
+
+    my $name = $c->request->param('name');
+
+    my $tag = $tags_rs->find_or_create({
+        name => $name,
+    });
+    $tag->update();
+
+    my @tagsblocks = $tagsblock_rs->find_or_create({
+        idtag => $tag->idtag(),
+        idblock => $arg,
+    });
+
+    my @tags = $tagsblock_rs->search({ idblock => $arg });
+
+
+    $c->stash({ tags => \@tagsblocks, idblock => $arg });
+}
+
 
 =encoding utf8
 
