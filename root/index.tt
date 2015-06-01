@@ -2,7 +2,7 @@
     <head>
         <title>[% title %]</title>
         <script>
-function loadBlock(block)
+function loadLanguages(block)
 {
     var xmlhttp;
     xmlhttp=new XMLHttpRequest();
@@ -11,15 +11,15 @@ function loadBlock(block)
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
             var newDiv = document.createElement('div');
-            var divname = 'block_'.concat(block);
+            var divname = 'l_block_'.concat(block);
             newDiv.id = divname;
             newDiv.className = divname;
-            document.getElementById("main").appendChild(newDiv);
+            document.getElementById("languages").appendChild(newDiv);
 
             document.getElementById(divname).innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","/block/".concat(block),true);
+    xmlhttp.open("GET","/admin/languages/".concat(block),true);
     xmlhttp.send();
 }
         </script>
