@@ -39,6 +39,31 @@ sub index :Path :Args(0) {
     $c->response->redirect( '/admin/block' );
 }
 
+sub blocks :Local :ActionClass('REST') { }
+
+sub blocks_GET {
+    my ( $self, $c ) = @_;
+
+    my $block_rs = $c->model( 'Blocks::Block' );
+
+    my @blocks = $block_rs->search({},{ rows => 2 });
+
+    $c->stash( blocks => \@blocks );
+
+}
+
+sub blocks_POST {
+    my ( $self, $c ) = @_;
+
+    my $param = $c->request->param("title");
+
+    my $block_rs = $c->model( 'Blocks::Block' );
+
+    my @blocks = $block_rs->search({ title => { like => $param } });
+
+    $c->stash( blocks => \@blocks );
+}
+
 sub block :Local :ActionClass('REST') { }
 
 sub block_GET :Args(1){
@@ -98,7 +123,7 @@ sub languages_GET :Args(1) {
     my ( $self, $c, $arg ) = @_;
 
     my $languages_rs = $c->model( 'Blocks::Language' );
-    my @languages = $languages_rs->search( { idblocks => $arg } );
+    my @languages = $languages_rs->search([  { idblocks => $arg }, { linked_block => $arg} ] );
 
     $c->stash({
         idblock     => $arg,
