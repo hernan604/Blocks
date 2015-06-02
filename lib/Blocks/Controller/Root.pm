@@ -34,7 +34,7 @@ The root page (/)
 
 =cut
 
-my @supported_languages = qw/en pt/;
+my @supported_languages = qw/pt en pt_BR/;
 
 sub begin :Private {
     my ( $self, $c ) = @_;
