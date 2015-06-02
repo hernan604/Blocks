@@ -195,7 +195,6 @@ sub tagsblocks_GET :Args(1) {
     my $tagsblock_rs = $c->model( 'Blocks::TagsBlock' );
 
     my @tags = $tagsblock_rs->search({ idblock => $arg });
-    print Dumper $tags[0]->tag;
     $c->stash({ tags => \@tags, idblock => $arg });
 }
 
@@ -220,7 +219,8 @@ sub tagsblocks_POST :Args(1) {
     my @tags = $tagsblock_rs->search({ idblock => $arg });
 
 
-    $c->stash({ tags => \@tagsblocks, idblock => $arg });
+    $c->response->redirect( '/admin/block/' . $arg);
+    #$c->stash({ tags => \@tagsblocks, idblock => $arg });
 }
 
 
