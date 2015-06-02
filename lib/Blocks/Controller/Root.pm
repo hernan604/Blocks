@@ -100,12 +100,16 @@ sub _div {
     my $tree = HTML::TreeBuilder->new_from_content( $content );
     my $div = HTML::Element->new('div');
 
+    my @class;
     for my $tag ( @tags ) {
         my $tagname = $tag->tag->name();
         $tagname =~ /class\:(.*)/;
         if ( $1 ) {
-            $div->attr( 'class', $1 );
+            push @class, $1;
         }
+    }
+    if ( @class ) {
+        $div->attr( 'class', join( " ", @class ) );
     }
     $div->push_content( $tree  );
 
