@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>[% title %]</title>
+        <meta charset="UTF-8">
         <script>
 function loadBlock(block)
 {

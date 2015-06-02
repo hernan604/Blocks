@@ -1,5 +1,6 @@
+Tags:
 <form action="/admin/tagsblocks/[% idblock %]" method="POST">
-    <input type="text" name="name">
+    <input type="text" name="name"><input type="submit">
 </form>
 [% FOREACH tag IN tags %]
     [% tag.tag.name %],
