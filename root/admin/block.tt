@@ -50,15 +50,13 @@
                 <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
             </li>
             <li>
-                <div id="tagsblocks">
-                    <script>load("tagsblocks",[% block.idblock %])</script>
-                </div>
-            </li>
-            <li>
                 <input type="submit">
             </li>
         </ul>
     </form>
+                <div id="tagsblocks">
+                    <script>load("tagsblocks",[% block.idblock %])</script>
+                </div>
 </div>
 
 <div id="main">
