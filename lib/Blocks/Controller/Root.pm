@@ -51,6 +51,7 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     my $block = $self->_block( $c, 1 );
+    $c->session->{ last_page } =  $block->idblock();
     $c->response->redirect( '/page/' . $block->idblock() );
 }
 
