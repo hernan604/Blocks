@@ -36,7 +36,7 @@ sub begin :Private {
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->response->redirect( '/admin/block' );
+    $c->response->redirect( '/admin/blocks' );
 }
 
 sub blocks :Local :ActionClass('REST') { }
