@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 use Data::Dumper;
 
+use HTML::Element;
+use HTML::TreeBuilder 5 -weak;
 use HTTP::AcceptLanguage;
 use Text::Markdown 'markdown';
 use Try::Tiny;
@@ -48,7 +50,6 @@ sub begin :Private {
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    # redirect to block 1
     my $block = $self->_block( $c, 1 );
     $c->response->redirect( '/page/' . $block->idblock() );
 }
@@ -88,18 +89,41 @@ sub page :Local :Args(1) {
     }
 }
 
+sub _div {
+    my ( $self, $c, $block ) = @_;
+
+    my $tagsblock_rs = $c->model( 'Blocks::TagsBlock' );
+
+    my @tags = $tagsblock_rs->search({ idblock => $block->idblock() });
+    my $content = markdown $block->content();
+
+    my $tree = HTML::TreeBuilder->new_from_content( $content );
+    my $div = HTML::Element->new('div');
+
+    for my $tag ( @tags ) {
+        my $tagname = $tag->tag->name();
+        $tagname =~ /class\:(.*)/;
+        if ( $1 ) {
+            $div->attr( 'class', $1 );
+        }
+    }
+    $div->push_content( $tree  );
+
+    return $div->as_HTML;
+}
+
 sub _render{
     my ( $self, $c , $block ) = @_;
 
     if ( $block->type() eq 'markdown' ){
-        return markdown $block->content();
+        return $self->_div( $c, $block );
     }else{
         my $output;
         # TODO search by title
         for my $line ( split ( '\n', $block->content() ) ){
             chomp $line;
             my $block = $self->_block( $c, $line );
-            $output .= markdown $block->content();
+            $output .= $self->_div( $c, $block );
         }
         return $output;
     }
