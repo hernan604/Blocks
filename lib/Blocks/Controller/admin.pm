@@ -3,6 +3,7 @@ use Moose;
 use namespace::autoclean;
 
 use Data::Dumper;
+use Encode;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
@@ -46,7 +47,7 @@ sub blocks_GET {
 
     my $block_rs = $c->model( 'Blocks::Block' );
 
-    my @blocks = $block_rs->search({},{ rows => 10 });
+    my @blocks = $block_rs->search({},{ rows => 30 });
 
     $c->stash( blocks => \@blocks );
 
