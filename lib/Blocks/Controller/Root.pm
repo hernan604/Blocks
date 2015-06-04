@@ -3,6 +3,7 @@ use Moose;
 use namespace::autoclean;
 
 use Data::Dumper;
+use Encode;
 
 use HTML::Element;
 use HTML::TreeBuilder 5 -weak;
@@ -79,7 +80,7 @@ sub page :Local :Args(1) {
 
     if ( $block ) {
         $c->stash( {
-            block =>  $content,
+            block => $content,
             page => {
                 title => $block->title(),
             }
@@ -96,7 +97,7 @@ sub _div {
     my $tagsblock_rs = $c->model( 'Blocks::TagsBlock' );
 
     my @tags = $tagsblock_rs->search({ idblock => $block->idblock() });
-    my $content = markdown $block->content();
+    my $content = decode_utf8( markdown $block->content() );
 
     my $tree = HTML::TreeBuilder->new_from_content( $content );
     my $div = HTML::Element->new('div');
