@@ -1,0 +1,17 @@
+requires 'HTML::TreeBuilder';
+requires 'HTML::Element';
+requires 'HTTP::AcceptLanguage';
+requires 'MooseX::NonMoose';
+requires 'Catalyst::View::TT';
+requires 'Catalyst::Authentication::Store::DBIx::Class';
+requires 'Catalyst::Plugin::Authentication';
+requires 'Catalyst::Plugin::Session::Store::FastMmap';
+requires 'Catalyst::Plugin::Session::State::Cookie';
+requires 'Catalyst::Runtime' => '5.90053';
+requires 'Catalyst::Plugin::ConfigLoader';
+requires 'Catalyst::Plugin::Static::Simple';
+requires 'Catalyst::Action::RenderView';
+requires 'Moose';
+requires 'namespace::autoclean';
+requires 'Config::General';
+requires 'Text::Markdown';
