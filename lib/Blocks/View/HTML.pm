@@ -5,6 +5,7 @@ use namespace::autoclean;
 extends 'Catalyst::View::TT';
 
 __PACKAGE__->config(
+    ENCODING => 'utf8',
     TEMPLATE_EXTENSION => '.tt',
     render_die => 1,
 );
