@@ -42,9 +42,11 @@ my @supported_languages = qw/pt en pt_BR/;
 sub begin :Private {
     my ( $self, $c ) = @_;
 
-    $c->session->{ lang } = HTTP::AcceptLanguage->new($_)->match(
+    $c->session->{ lang } = HTTP::AcceptLanguage->new( $c->request->env->{ HTTP_ACCEPT_LANGUAGE } )->match(
         @supported_languages
     );
+
+    print Dumper $c->session->{ lang };
 
 }
 
