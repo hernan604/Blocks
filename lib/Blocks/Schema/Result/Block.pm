@@ -112,9 +112,23 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("idblock");
 
+=head1 UNIQUE CONSTRAINTS
 
-# Created by DBIx::Class::Schema::Loader v0.07043 @ 2015-06-01 13:40:12
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:JiUbjApuSv7yBWtaGpSnXg
+=head2 C<title_UNIQUE>
+
+=over 4
+
+=item * L</title>
+
+=back
+
+=cut
+
+__PACKAGE__->add_unique_constraint("title_UNIQUE", ["title"]);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07043 @ 2015-06-08 08:09:10
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GB4/ysnfrPNK5t69Bmzjww
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

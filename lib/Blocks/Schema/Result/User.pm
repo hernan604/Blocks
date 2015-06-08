@@ -63,6 +63,11 @@ __PACKAGE__->table("User");
   is_nullable: 1
   size: 255
 
+=head2 details
+
+  data_type: 'text'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -79,6 +84,8 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", is_nullable => 1, size => 255 },
   "token",
   { data_type => "varchar", is_nullable => 1, size => 255 },
+  "details",
+  { data_type => "text", is_nullable => 1 },
 );
 
 =head1 PRIMARY KEY
@@ -120,8 +127,8 @@ __PACKAGE__->add_unique_constraint("email_UNIQUE", ["email"]);
 __PACKAGE__->add_unique_constraint("token_UNIQUE", ["token"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07043 @ 2015-05-18 07:36:32
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:jV59yCTyWXVvABBfCsx/fA
+# Created by DBIx::Class::Schema::Loader v0.07043 @ 2015-06-08 08:09:33
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:k8qq+HWEj6yDmZFVraJt0Q
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
