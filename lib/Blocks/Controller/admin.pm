@@ -71,11 +71,13 @@ sub block_GET :Args(1){
     my ( $self, $c, $arg ) = @_;
 
     my $block_rs = $c->model( 'Blocks::Block' );
-
+    $block_rs->result_class('DBIx::Class::ResultClass::HashRefInflator');
     my $block;
     if ( $arg ) {
         $block = $block_rs->find($arg);
     }
+
+    $block->{ content } =~ s/(\<)(\/?textarea)/\&lt\;$2/gi;
 
     if ( $block ){
         $c->stash(
