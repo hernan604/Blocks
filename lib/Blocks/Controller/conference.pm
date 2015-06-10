@@ -42,6 +42,7 @@ sub register_POST{
     my $address = $c->request->param("address");
     my $tshirt  = $c->request->param("tshirt");
     my $type    = $c->request->param("type");
+    my $message = $c->request->param("message");
 
     my $user_rs = $c->model('Blocks::User');
 
@@ -61,7 +62,11 @@ sub register_POST{
             };
             $user->details( encode_json $details );
             $user->insert();
-            $c->response->body( "<h1> Your registration was confirmed, soon the staff will contact you. </h1> <br> <h1> Seu registro foi confirmado, em breve a organização entrara em contato com voce </h1>" );
+            if ( $message ) {
+                $c->response->redirect( $message );
+            }else{
+                $c->response->body( "success" );
+            }
         }else{
             $c->response->body( "The user already exists");
             # error forbiden
@@ -80,6 +85,7 @@ sub paper_POST {
     my $title   = $c->request->param("title");
     my $content = $c->request->param("content");
     my $email   = $c->request->param("email");
+    my $message = $c->request->param("message");
 
     my $block_rs = $c->model('Blocks::Block');
 
@@ -103,8 +109,11 @@ sub paper_POST {
         idblock => $block->idblock(),
     });
 
-    $c->response->body( "<h1> Your paper was received, soon the staff will contact you. </h1> <br> <h1> Sua palestra foi recebida, em breve a organização entrara em contato com voce </h1>" );
-    $c->response->redirect( '/page/' . $c->session->{ last_page } );
+    if ( $message ) {
+        $c->response->redirect( $message );
+    }else{
+        $c->response->body( "success" );
+    }
 
 }
 
