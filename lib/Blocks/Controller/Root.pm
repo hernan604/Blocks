@@ -58,11 +58,29 @@ sub index :Path :Args(0) {
     $c->response->redirect( '/page/' . $block->idblock() );
 }
 
-sub block :Path( '/block' ) :Args(1) {
+sub block :Path( '/block' ) :ActionClass('REST') { }
+
+sub block_GET :Args(1) {
     my ( $self, $c , $arg ) = @_;
 
     my $block = _block( @_ );
 
+    my $content = $self->_render( $c, $block );
+
+    if ( $block ) {
+            $c->response->body( $content );
+    }else{
+        $c->response->status(404);
+        $c->response->body( 'Block not found' );
+    }
+}
+
+sub block_POST :Args(1) {
+    my ( $self, $c , $arg ) = @_;
+
+    my $block = _block( @_ );
+    my $preview = $c->request->param("preview");
+    $block->content( $preview );
     my $content = $self->_render( $c, $block );
 
     if ( $block ) {
