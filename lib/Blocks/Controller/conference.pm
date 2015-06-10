@@ -103,6 +103,7 @@ sub paper_POST {
         idblock => $block->idblock(),
     });
 
+    $c->response->body( "<h1> Your paper was received, soon the staff will contact you. </h1> <br> <h1> Sua palestra foi recebida, em breve a organização entrara em contato com voce </h1>" );
     $c->response->redirect( '/page/' . $c->session->{ last_page } );
 
 }
