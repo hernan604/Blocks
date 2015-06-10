@@ -29,7 +29,7 @@
 </div>
 
 <div id="block">
-    <form METHOD="POST">
+    <form id="blockeditor" METHOD="POST">
         <ul>
             <li>
                 type:
@@ -50,10 +50,24 @@
                 <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
             </li>
             <li>
-                <input type="submit">
+                <input type="hidden" name="idblock" value="[% block.idblock %]">
+                <input type="submit" name="edit" onclick="document.pressed=this.value" value="edit">
             </li>
         </ul>
     </form>
+    <button onclick="doPreview();">Preview</button>
+    <script>
+        function doPreview()
+        {
+            form=document.getElementById('blockeditor');
+            form.target='_black';
+            form.action='/block';
+            form.submit();
+            form.action='/admin/block';
+            form.target='';
+        }
+    </script>
+
                 <div id="tagsblocks">
                     <script>load("tagsblocks",[% block.idblock %])</script>
                 </div>

@@ -75,11 +75,12 @@ sub block_GET :Args(1) {
     }
 }
 
-sub block_POST :Args(1) {
-    my ( $self, $c , $arg ) = @_;
+sub block_POST {
+    my ( $self, $c ) = @_;
 
-    my $block = _block( @_ );
-    my $preview = $c->request->param("preview");
+    my $arg = $c->request->param("idblock");
+    my $preview = $c->request->param("content");
+    my $block = $self->_block( $c, $arg );
     $block->content( $preview );
     my $content = $self->_render( $c, $block );
 
