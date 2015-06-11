@@ -46,7 +46,7 @@ sub login_POST {
     my $password = $c->request->param('password');
 
     if ( $c->authenticate( { email => $username, password => $password })){
-        my $url =  $c->session->{ return_uri } || '/';
+        my $url =  $c->session->{ return_uri } || '/admin/blocks';
         $c->response->redirect( $url );
     }else{
         $c->response->redirect( '/auth/login' );
