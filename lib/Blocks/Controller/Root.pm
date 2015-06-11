@@ -42,16 +42,25 @@ my @supported_languages = qw/pt en pt_BR/;
 sub begin :Private {
     my ( $self, $c ) = @_;
 
-    $c->session->{ lang } = HTTP::AcceptLanguage->new( $c->request->env->{ HTTP_ACCEPT_LANGUAGE } )->match(
-        @supported_languages
-    );
-
-    print Dumper $c->session->{ lang };
-
+    if ( ! $c->session->{ lang }  ) {
+        $c->session->{ lang } = HTTP::AcceptLanguage->new( $c->request->env->{ HTTP_ACCEPT_LANGUAGE } )->match(
+            @supported_languages
+        );
+    }
 }
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
+
+    my $block = $self->_block( $c, 1 );
+    $c->session->{ last_page } =  $block->idblock();
+    $c->response->redirect( '/page/' . $block->idblock() );
+}
+
+sub lang :Local :Args(1) {
+    my ( $self, $c, $arg ) = @_;
+
+    $c->session->{ lang } = HTTP::AcceptLanguage->new( $arg )->match( @supported_languages );;
 
     my $block = $self->_block( $c, 1 );
     $c->session->{ last_page } =  $block->idblock();
