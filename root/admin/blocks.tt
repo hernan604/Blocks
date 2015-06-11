@@ -1,37 +1,9 @@
 [% WRAPPER index.tt title = "Block Admin" %]
 
-<div id="help">
-    <ul>
-        <li>
-            Add a content from another block:
-            <code>
-                &lt;script&gt;loadBlock( Block Number )&lt;/script&gt;
-            </code>
-            <p>
-                Ex:
-                <code>
-                    &lt;script&gt;loadBlock( 42 )&lt;/script&gt;
-                </code>
-                will add the block 42 content in the place
-            </p>
-        </li>
-    </ul>
-</div>
+[% INCLUDE admin/blocks_nav.tt %]
 
-<div id="block_search">
-    <form METHOD="POST">
-        <input type="text" name="title">
-        <input type="submit">
-    </form>
-</div>
-
-<div>
-    <a href="/admin/block">
-        Add a new block
-    </a>
-</div>
-
-<div>
+<div class="_blocks_list">
+    <h3> Short list of the last blocks </h3>
     <ul>
 [% FOREACH block IN blocks %]
     <li>

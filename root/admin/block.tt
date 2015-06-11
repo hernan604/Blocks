@@ -1,36 +1,17 @@
 [% WRAPPER index.tt title = "Block Admin" %]
 
-<div id="help">
-    <ul>
-        <li>
-            Add a content from another block:
-            <code>
-                &lt;script&gt;loadBlock( Block Number )&lt;/script&gt;
-            </code>
-            <p>
-                Ex:
-                <code>
-                    &lt;script&gt;loadBlock( 42 )&lt;/script&gt;
-                </code>
-                will add the block 42 content in the place
-            </p>
-        </li>
-    </ul>
-</div>
+[% INCLUDE admin/blocks_nav.tt %]
 
-<div>
-    <a href="/admin/block">
-        Add a new block
-    </a>
-</div>
 
-<div id="languages">
+<div class="_block_editor">
     <script>loadLanguages([% block.idblock %])</script>
-</div>
-
-<div id="block">
-    <form id="blockeditor" METHOD="POST">
+    <div class="_blocks_list" id="languages">
+    </div>
+    <form class="_blocks_list" id="blockeditor" METHOD="POST">
         <ul>
+            <li>
+                <button onclick="doPreview();">Preview</button>
+            </li>
             <li>
                 type:
                 <select name="type">
@@ -51,26 +32,13 @@
             </li>
             <li>
                 <input type="hidden" name="idblock" value="[% block.idblock %]">
-                <input type="submit" name="edit" onclick="document.pressed=this.value" value="edit">
+                <input type="submit" name="edit" onclick="document.pressed=this.value" value="Save">
             </li>
         </ul>
     </form>
-    <button onclick="doPreview();">Preview</button>
-    <script>
-        function doPreview()
-        {
-            form=document.getElementById('blockeditor');
-            form.target='_black';
-            form.action='/block';
-            form.submit();
-            form.action='/admin/block';
-            form.target='';
-        }
-    </script>
-
-                <div id="tagsblocks">
-                    <script>load("tagsblocks",[% block.idblock %])</script>
-                </div>
+    <script>load("tagsblocks",[% block.idblock %])</script>
+    <div class="_blocks_tags" id="tagsblocks">
+    </div>
 </div>
 
 [% END %]

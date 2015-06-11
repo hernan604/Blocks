@@ -1,7 +1,14 @@
-Tags:
-<form action="/admin/tagsblocks/[% idblock %]" method="POST">
-    <input type="text" name="name"><input type="submit">
-</form>
+<ul>
+    <li> Tags: </li>
 [% FOREACH tag IN tags %]
-    [% tag.tag.name %],
+    <li id="_blocks_editor_tag">[% tag.tag.name %]</li>
 [% END %]
+</ul>
+<ul>
+    <li>
+        <form action="/admin/tagsblocks/[% idblock %]" method="POST">
+            <input type="text" name="name">
+            <input type="submit" value="Add new Tag">
+        </form>
+    </li>
+</ul>

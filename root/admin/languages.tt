@@ -1,19 +1,18 @@
 <ul>
     <li>
-        Languages for this block:
-        [% idblock %]
+        Languages for this block id: [% idblock %]
     </li>
     <li>
         <form action="/admin/languages/[% idblock %]" method="POST">
             <input type="text" name="language" value="">
-            <input type="submit">
+            <input type="submit" value="New Language">
         </form>
     </li>
 [% FOREACH language IN languages %]
     <li>
         <a href="/admin/block/[% language.idblocks %]">
-        [% language.idblocks %]  <a/> ::
-        [% language.language %] ::
+        [% language.idblocks %]  <a/> in
+        <b>[% language.language %]</b> is block id:
         <a href="/admin/block/[% language.linked_block %]">
         [% language.linked_block %]
         </a>

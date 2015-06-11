@@ -1,0 +1,76 @@
+html
+{
+    font-family: Sans-serif, serif;
+}
+
+
+._blocks_nav
+{
+    top: 0;
+    width: 100%;
+    padding: 0.1em .1em .1em .1em;
+    background-color: rgba(1, 1, 1, 0.8);
+}
+
+._blocks_nav ul
+{
+    list-style-type: none;
+}
+
+._blocks_nav ul li
+{
+    display: inline;
+    padding-left: 1em;
+    color: #FFF;
+    font-family: Sans-serif, serif;
+}
+
+._blocks_nav ul li a
+{
+    color: #FFF;
+    font-family: Sans-serif, serif;
+    text-decoration: none;
+}
+
+._blocks_nav ul li form
+{
+    display: inline;
+}
+
+._blocks_list ul
+{
+    list-style-type: none;
+}
+
+._blocks_list ul li
+{
+    padding-left: 1em;
+    color: #000;
+    font-family: Sans-serif, serif;
+}
+
+._blocks_tags ul
+{
+    list-style-type: none;
+}
+
+._blocks_tags form
+{
+    display: inline;
+}
+
+._blocks_tags ul li
+{
+    display: inline;
+    padding-left: 1em;
+    color: #000;
+    font-family: Sans-serif, serif;
+}
+
+#_blocks_editor_tag
+{
+    color: #FFF;
+    background-color: #222;
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    margin: 0.1em 0.1em 0.1em 0.1em;
+}
