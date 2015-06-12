@@ -1,0 +1,29 @@
+[% WRAPPER index.tt title = "User Details" %]
+
+[% INCLUDE admin/blocks_nav.tt %]
+
+<div class="_blocks_list">
+
+    <form method="POST">
+        <ul>
+            <li>[% user.email %]</li>
+            <li>
+                Change Pass:
+                <input type="text" name="password">
+            </li>
+            [% FOREACH key IN details.keys %]
+            <li>
+                [% key %]
+                <input type="text" name="[% key %]"
+                 value="[% details.$key %]">
+            </li>
+            [% END %]
+            <li>
+                <input type="submit" value="update">
+            </li>
+        </ul>
+    </form>
+</div>
+
+
+[% END %]

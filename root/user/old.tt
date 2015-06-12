@@ -1,0 +1,18 @@
+[% WRAPPER index.tt title = "User Admin" %]
+
+<h3>New User</h3>
+<form method="POST">
+    Email: <input type="text" name="user" value="">
+    Password: <input type="text" name="password">
+    <input type="submit">
+</form>
+<h3>Other Users</h3>
+[% FOREACH user IN users %]
+<form method="POST">
+    Email: <input type="text" name="user" value="[% user.email %]">
+    Password: <input type="text" name="password">
+    <input type="submit">
+</form>
+[% END %]
+
+[% END %]
