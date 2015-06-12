@@ -1,7 +1,29 @@
-<form method="POST">
-    Email:<input type="text" name="user">
-    <br>
-    Password: <input type="text" name="password">
-    <br>
-    <input type="submit">
-</form>
+[% WRAPPER index.tt title = "Welcome to Blocks CMS" %]
+
+<div class="_blocks_auth_banner">
+    <img src="/static/images/blocks_login_2.png">
+</div>
+
+<div class="_blocks_auth">
+    <form method="POST">
+        <ul>
+            <li>
+                <h3>
+                    Identify yourself to enter
+                </h3>
+            </li>
+            <li>
+                Email:
+                <input type="text" name="user">
+            </li>
+            <li>
+                Password:
+                <input type="password" name="password">
+            </li>
+            <li>
+                <input type="submit" value="login">
+            </li>
+    </form>
+</div>
+
+[% END %]

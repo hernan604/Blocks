@@ -3,7 +3,6 @@ html
     font-family: Sans-serif, serif;
 }
 
-
 ._blocks_nav
 {
     top: 0;
@@ -73,4 +72,39 @@ html
     background-color: #222;
     padding: 0.1em 0.3em 0.1em 0.3em;
     margin: 0.1em 0.1em 0.1em 0.1em;
+}
+
+._blocks_auth_banner
+{
+    float: left;
+    margin-top: 5em;
+    margin-right: 3em;
+}
+
+._blocks_auth
+{
+    float: left;
+    background-color: #111;
+    color: #DDD;
+    width: 30vw;
+    height: 30vh;
+    margin-top: 10em;
+    margin-right: 3em;
+}
+
+._blocks_auth
+{
+    padding: 3em 3em 3em 3em;
+    text-align: right;
+}
+
+._blocks_auth ul
+{
+    font-size: 1.2em;
+    list-style-type: none;
+}
+
+._blocks_auth input
+{
+    position: relative;
 }
