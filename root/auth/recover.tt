@@ -1,0 +1,44 @@
+[% WRAPPER index.tt title = "Do not forget it now :)" %]
+
+<div class="_blocks_auth_banner">
+    <img src="/static/images/blocks_login_2.png">
+</div>
+
+[% IF message %]
+<div class="_blocks_auth">
+        <ul>
+            <li>
+                [% message %]
+            </li>
+        </ul>
+</div>
+[% ELSE %]
+<div class="_blocks_auth">
+    <form method="POST">
+        <ul>
+            <li>
+                <h3>
+                    Type your new password
+                </h3>
+            </li>
+            <li style="padding-bottom: 0.4em">
+                Type two times the password. Try to use
+                two or three words that has some meaning to you
+            </li>
+            <li>
+                Password:
+                <input type="text" name="password">
+            </li>
+            <li>
+                Again
+                <input type="text" name="kagebunshin">
+            </li>
+            <li>
+                <input type="submit" value="Change it">
+            </li>
+        </ul>
+    </form>
+</div>
+[% END %]
+
+[% END %]

@@ -3,6 +3,7 @@ use Moose;
 use namespace::autoclean;
 
 use Digest::MD5 qw/md5_hex/;
+use Email::Stuffer;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
@@ -59,6 +60,102 @@ sub logout :Local{
     $c->logout();
 
     $c->response->redirect('/auth/login');
+}
+
+sub lost_password :Local :ActionClass('REST') { }
+
+sub lost_password_GET {
+    my ( $self, $c ) = @_;
+}
+
+sub lost_password_POST {
+    my ( $self, $c ) = @_;
+
+    my $email = $c->request->param("email");
+
+    my $user_rs = $c->model( 'Blocks::User' );
+    my $user = $user_rs->find({ email => $email });
+
+    print Dumper $user;
+
+    if ( $user and $user->password() ){
+        my $token = md5_hex $c;
+
+        $user->token( $token );
+        $user->update();
+
+        # TODO be a block
+
+        my $body = <<"RECOVER";
+
+Hello,
+
+You, owner of the email $email requested to
+reset the password at Blocks CMS application.
+
+Should be fine, it is just a matter of follow this link:
+
+    http://devel.imovlr.com:3000/auth/recover?token=$token
+
+Then set your new password.
+
+Thanks, Block CMS
+
+RECOVER
+
+Email::Stuffer->from        ( 'blocks@imovlr.com'   )
+              ->to          ( $user->email()        )
+              ->bcc         ( 'cartas@frederico.me' )
+              ->subject     ( 'blocks recover password' )
+              ->text_body   ( $body )
+              ->send;
+
+        $c->stash({
+            message => "Sent recover email to ". $user->email(),
+        });
+    }else{
+        $c->stash({
+            message => "This user does not have access to here",
+        });
+    }
+}
+
+sub recover :Local :ActionClass('REST') { }
+
+sub recover_GET{
+    my ( $self, $c ) = @_;
+
+    my $token = $c->request->param("token");
+
+    my $user_rs = $c->model( 'Blocks::User' );
+    my $user = $user_rs->find({ token => $token });
+
+    if ( $user ) {
+        $c->session->{ token } = $token;
+        $c->stash({
+            email => $user->email(),
+        });
+    }else{
+        $c->response->redirect( '/auth/login' );
+    }
+}
+
+sub recover_POST {
+    my ( $self, $c ) = @_;
+
+    my $password    = $c->request->param("password");
+    my $kagebunshin = $c->request->param("kagebunshin");
+
+    my $token   = $c->session->{ token };
+    my $user_rs = $c->model( 'Blocks::User' );
+    my $user = $user_rs->find({ token => $token });
+
+    if ( $user and ( $password eq $kagebunshin )) {
+        $user->password( md5_hex( $password ) );
+        $user->update();
+    }
+
+    $c->response->redirect( '/auth/login' );
 }
 
 =encoding utf8
