@@ -4,6 +4,10 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use Data::Dumper;
+use Digest::MD5 qw/md5_hex/;
+use JSON;
+
 =head1 NAME
 
 Blocks::Controller::user - Catalyst Controller
@@ -14,8 +18,16 @@ Catalyst Controller.
 
 =head1 METHODS
 
-=cut
+sub begin :Private {
+    my ( $self, $c ) = @_;
 
+    if ( ! $c->user() ){
+        $c->session->{ return_uri } = $c->request->uri;
+        $c->response->redirect( '/auth/login' );
+    }
+}
+
+=cut
 
 =head2 index
 
@@ -24,10 +36,54 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->response->body('Matched Blocks::Controller::user in user.');
+    $c->response->redirect( '/user/user' );
 }
 
+sub user :Local :ActionClass('REST') { }
 
+sub user_GET{
+    my ( $self, $c ) = @_;
+
+    my $user_rs = $c->model( 'Blocks::User' );
+    $user_rs->result_class('DBIx::Class::ResultClass::HashRefInflator');
+    my $session_user = $c->user();
+    my $user = $user_rs->find( $session_user->uid() );
+    my $details = decode_json $user->{ details }
+        if $user->{ details };
+
+    $c->stash({
+        user => $user,
+        details => $details,
+    });
+}
+
+sub user_POST{
+  my ( $self, $c ) = @_;
+
+    my $details = $c->request->parameters();
+    print Dumper $details;
+
+    my $user_rs = $c->model( 'Blocks::User' );
+    my $session_user = $c->user();
+    my $user = $user_rs->find( $session_user->uid() );
+
+    if ( $user ) {
+
+        if ( $details and exists $details->{ password } ){
+            $user->password( md5_hex $details->{ password } );
+            delete $details->{ password };
+        }
+
+        if ( keys %$details ){
+            my $detail = encode_json $details;
+            $user->details( $detail );
+        }
+
+        $user->update();
+    }
+
+    $c->response->redirect( '/user/user' );
+}
 
 =encoding utf8
 
