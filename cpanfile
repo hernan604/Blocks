@@ -1,3 +1,4 @@
+requires 'Email::Stuffer';
 requires 'JSON';
 requires 'List::Util' => '1.33';
 requires 'DBD::mysql' => '4.025';
