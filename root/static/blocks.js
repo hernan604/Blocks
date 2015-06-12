@@ -62,9 +62,10 @@ function loadLanguages(block)
 function doPreview()
 {
     form=document.getElementById('blockeditor');
+    old=form.action;
     form.target='_black';
     form.action='/block';
     form.submit();
-    form.action='/admin/block';
+    form.action=old;
     form.target='';
 }
