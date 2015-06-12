@@ -1,0 +1,23 @@
+
+<div id="help">
+
+    <h1>Blocks CMS Help </h1>
+
+    <a id="editor">
+        <ul>
+            <li>
+                Add a content from another block:
+                <code>
+                    &lt;script&gt;loadBlock( Block Number )&lt;/script&gt;
+                </code>
+                <p>
+                    Ex:
+                    <code>
+                        &lt;script&gt;loadBlock( 42 )&lt;/script&gt;
+                    </code>
+                    will add the block 42 content in the place
+                </p>
+            </li>
+        </ul>
+    </a>
+</div>

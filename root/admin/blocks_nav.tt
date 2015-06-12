@@ -1,0 +1,21 @@
+<div class="_blocks_nav">
+    <ul>
+        <li>
+            <a href="/admin/blocks">
+                Admin
+            </a>
+        </li>
+        <li>
+            <a href="/admin/block">
+                New Block
+            </a>
+        </li>
+        <li>
+        </li>
+        <li>
+            <form METHOD="POST" action="/admin/blocks">
+                <input type="text" name="title">
+                <input type="submit" value="search block">
+            </form>
+        </li>
+</div>
