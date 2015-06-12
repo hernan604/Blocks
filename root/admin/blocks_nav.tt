@@ -18,4 +18,14 @@
                 <input type="submit" value="search block">
             </form>
         </li>
+        <li>
+            <a href="/user/user">
+                Profile
+            </a>
+        </li>
+        <li>
+            <a href="/auth/logout">
+                Logout
+            </a>
+        </li>
 </div>
