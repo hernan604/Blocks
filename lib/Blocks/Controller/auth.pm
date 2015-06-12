@@ -61,42 +61,6 @@ sub logout :Local{
     $c->response->redirect('/auth/login');
 }
 
-sub user :Local :ActionClass('REST' ) { }
-
-sub user_GET {
-    my ( $self, $c ) = @_;
-
-    my $user_rs = $c->model( 'Blocks::User' );
-
-    my @users = $user_rs->all();
-
-    $c->stash({
-        users => \@users,
-    });
-}
-
-sub user_POST {
-    my ( $self, $c ) = @_;
-
-    my $email = $c->request->param( "user" );
-    my $password = $c->request->param( "password" );
-
-    if ( $email and $password ) {
-        my $user_rs = $c->model( 'Blocks::User' );
-        my $user = $user_rs->find( { email => $email } );
-        if ( $user ){
-            $user->password( md5_hex $password );
-            $user->update();
-        }else{
-            $user = $user_rs->create({
-                email => $email,
-                password => md5_hex( $password ),
-            });
-        }
-    }
-    $c->response->redirect( '/auth/user' );
-}
-
 =encoding utf8
 
 =head1 AUTHOR
