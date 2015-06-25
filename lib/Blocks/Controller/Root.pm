@@ -148,12 +148,18 @@ sub _div {
     return $div->as_HTML;
 }
 
+# block_process ( types on configuration )   raw/markdown/blocks
 sub _render{
     my ( $self, $c , $block ) = @_;
 
+    # dispatch
     if ( $block->type() eq 'markdown' ){
         return $self->_div( $c, $block );
-    }else{
+    }
+    if ( $block->type() eq 'raw' ) }
+        return $block->content();
+    }
+    else{
         my $output;
         # TODO search by title
         for my $line ( split ( '\n', $block->content() ) ){
@@ -166,6 +172,7 @@ sub _render{
 
 }
 
+# block resolve ( language and name )
 sub _block {
     my ( $self, $c , $arg ) = @_;
 
