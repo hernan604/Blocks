@@ -50,4 +50,4 @@ ALTER TABLE `Blocks`
 ADD COLUMN `type` VARCHAR(255) NOT NULL DEFAULT 'markdown' AFTER `content`;
 
 ALTER TABLE `User`
-ADD COLUMN `type` TEXT DEFAULT '' AFTER `token`;
+ADD COLUMN `details` TEXT DEFAULT '' AFTER `token`;
