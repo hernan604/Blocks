@@ -1,3 +1,5 @@
+requires 'FCGI';
+requires 'FCGI::ProcManager';
 requires 'Email::Stuffer';
 requires 'JSON';
 requires 'List::Util' => '1.33';

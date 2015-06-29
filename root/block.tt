@@ -1,5 +1,5 @@
 
-.<div class="block">
+<div class="block">
     <h2>[% block.title %]</h2>
 
     <p>
