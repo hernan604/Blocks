@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[% title %]</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="/static/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+        <link  rel="stylesheet" href="/static/css/font-awesome.css">
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="/static/.css/font-awesome-ie7.css">
+        <![endif]-->
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/style-responsive.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/jquery.fancybox.css" media="all" />
+    </head>
+    <body>
+            [% content %]
+    </body>
+</html>
