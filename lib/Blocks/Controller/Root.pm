@@ -109,6 +109,7 @@ sub page :Local :Args(1) {
     my $content = $self->_render( $c, $block );
 
     if ( $block ) {
+        # TODO choose template ( based on block? )
         $c->stash( {
             block => $content,
             page => {
@@ -156,7 +157,7 @@ sub _render{
     if ( $block->type() eq 'markdown' ){
         return $self->_div( $c, $block );
     }
-    if ( $block->type() eq 'raw' ) }
+    if ( $block->type() eq 'raw' ) {
         return $block->content();
     }
     else{
@@ -165,7 +166,11 @@ sub _render{
         for my $line ( split ( '\n', $block->content() ) ){
             chomp $line;
             my $block = $self->_block( $c, $line );
-            $output .= $self->_div( $c, $block );
+            if ( $block->type() eq "raw" ) {
+                $output .= $block->content();
+            }else{
+                $output .= $self->_div( $c, $block );
+            }
         }
         return $output;
     }

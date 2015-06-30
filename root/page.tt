@@ -1,3 +1,3 @@
-[% WRAPPER index.tt title = page.title %]
+[% WRAPPER yapc_index.tt title = page.title %]
     [% block %]
 [% END %]

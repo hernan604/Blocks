@@ -15,8 +15,15 @@
             <li>
                 type:
                 <select name="type">
-                    <option value="markdown">Markdown</option>
-                    <option value="blocks">Blocks</option>
+                    <option value="markdown" [% IF block.type == "markdown" %]selected[% END %]>
+                        Markdown
+                    </option>
+                    <option value="blocks" [% IF block.type == "blocks" %]selected[% END %]>
+                        Blocks
+                    </option>
+                    <option value="raw" [% IF block.type == "raw" %]selected[% END %]>
+                        Raw
+                    </option>
                 </select>
             </li>
             <li>

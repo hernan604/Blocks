@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>YAPC::Brasil 2015</title>
+
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="../assets/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Stylesheet --> 	
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link  rel="stylesheet" href="css/font-awesome.css">
+        <!--[if IE 7]>
+        <link rel="stylesheet" href=".css/font-awesome-ie7.css">
+        <![endif]-->
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style-responsive.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="all" />
+    </head>
+    
+    <body>
+		<!-- HEADER HOME -->
+		<section id="home">
+			<div class="row centered">
+				<div class="content" style="max-width: 60%; min-width: 150px;"></div>
+			</div>
+			<div class="language-header language-item" >
+				<span class ="language-item-pt"><a  href="#" title="Vers&atilde;o em Portugu&ecirc;s">PT</a></span> | <span class ="language-item-en"><a class ="en" href="#" title="English Version">EN</a></span>
+			</div>
+		</section>
+		<!-- END HOME -->
+		
+		<!-- NAVBAR -->
+		<div class="navbar navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+						<span class="sr-only">Menu</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">
+						<h4 class="brand">YAPC::BRASIL</h4>
+					</a>
+				</div>
+				<nav class="navbar-collapse collapse" id="main-nav" role="navigation">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#home">IN&Iacute;CIO</a></li>
+						<li><a href="#about">O EVENTO</a></li>
+						<li><a href="#team">O TIME</a></li>
+						<li><a href="#place">LOCAL</a></li>
+						<li><a href="#tickets">INSCRI&Ccedil;&Otilde;ES</a></li>
+						<li><a href="#sponsors">PATROCINADORES</a></li>
+						<li><a href="#contact">CONTATO</a></li>
+						<!-- li><a href="#interaction">INTERA&Ccedil;&Atilde;O</a></li -->
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END NAVBAR -->
+        
+		<section class="thin-slice color3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 centered">
+                        <div class="box">
+    						<h4>
+    							O YAPC::Brasil deste ano acontecer&aacute; nos dias <strong>18, 19 e 20 de Setembro</strong> no <strong>Gran Continental Hotel</strong> em Taubat&eacute; - SP. 
+    						<br />
+                                N&atilde;o fique de fora e venha fazer parte deste evento imperd&iacute;vel!
+                            </h4>
+                        </div>
+					</div>
+                             
+					<div class="col-md-4 col-md-offset-4">
+                        <div class="box">
+						  <a class="button" href="#tickets">Garantir meu ingresso agora!</a>	
+					    </div>
+                    </div>
+                    
+				</div>
+			</div>
+		</section>
+		
+        <!-- ABOUT SECTION -->
+        <section id="about" class="slice color2">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2>o evento</h2>
+                    </div>
+                </div>            
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <br /><br /><img alt="about_image" src="img/about/about.png" class="img-responsive" height="" width="550"/>                         
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        
+                            <h4>A linguagem Perl contempla o que h&aacute; de mais poderoso e flex&iacute;vel no mercado de desenvolvimento de software.</h4>
+                            <br />
+                            
+                            <div class="col-sm-12 col-md-6">
+                                <p>Os <strong>YAPCs</strong> ou <strong>Yet Another Perl Conferences</strong> s&atilde;o eventos anuais compostos por <strong>palestras, oficinas e debates</strong> sobre os mais variados assuntos envolvendo o <strong>Perl</strong>, linguagem de programa&ccedil;&atilde;o que contempla o que h&aacute; de mais poderoso e flex&iacute;vel no mercado de desenvolvimento de software.</p> 
+                            
+                                <p>Neste ano, <strong>o YAPC::Brasil acontecer&aacute; em Taubat&eacute;</strong>, munic&iacute;pio do interior do estado de S&atilde;o Paulo, <strong>nos dias 18, 19 e 20 de Setembro</strong>, e buscaremos a contribui&ccedil;&atilde;o de nomes de refer&ecirc;ncia nas comunidades nacionais e internacionais de Perl, sendo que no ano retrasado contamos com a presen&ccedil;a do convidado especial Joel Berger, criador do Perl 4 Science e PhD em f&iacute;sica.</p>
+
+                                <p>Aproveitando que 2015 &eacute; o ano do <strong>15&ordm; anivers&aacute;rio do CPAN</strong> ou Comprehensive Perl Archive Network, nosso reposit&oacute;rio de mais de 130.200 m&oacute;dulos de software escritos em Perl, <strong>vamos celebr&aacute;-lo com uma maratona de programa&ccedil;&atilde;o</strong> para carregar e fixar m&oacute;dulos sobre ele.</p>
+
+                                <p>Convidamos você então a vir e conferir o que h&aacute; de mais moderno e empolgante em desenvolvimento de software na linguagem Perl. </p>
+    							
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <p>Vale lembrar que <strong>o prop&oacute;sito do evento &eacute; reunir todos os amantes, entusiastas, usu&aacute;rios e curiosos da linguagem Perl</strong>. Tendo ra&iacute;zes nos grupos Perl Mongers do Brasil, a confer&ecirc;ncia celebra esta linguagem de programa&ccedil;&atilde;o, sendo absolutamente <strong>acess&iacute;vel a todos os interessados, independente do n&iacute;vel de experi&ecirc;ncia com a linguagem ou habilidade com programa&ccedil;&atilde;o</strong>. </p>
+
+                                <p>Venha conhecer a tecnologia que est&aacute; por tr&aacute;s de empresas como a <strong>Amazon</strong> e <strong>Booking.com</strong>, de portais como o da <strong>BBC</strong> e de <strong>blogs</strong> como o utilizado na candidatura de Barak Obama. </p>
+
+                                <br />
+                                <h4>Tema do Evento</h4>
+                                
+                                <p>O tema do evento para este ano &eacute; <strong>&#34;Comunidade Perl e CPAN&#34;</strong>, e isso envolve a abordagem de assuntos como perguntas e respostas sobre Perl, módulos, desenvolvimento em Perl, bem como a comunidade adepta a esta poderosa linguagem de programa&ccedil;&atilde;o. T&oacute;picos relacionados:</p>
+
+                                <p>
+                                    <ul>
+                                        <li>Perl Moderno;</li> 
+                                        <li>CPAN: criação e apresentação de módulos;</li>
+                                        <li>Frameworks;</li>
+                                        <li>Perl Mongers.</li>
+                                    </ul>
+                                </p>
+                            </div>  
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END ABOUT -->
+		
+        <!-- TEAM SECTION -->
+        <section id="team" class="slice color6">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2>o time</h2>
+                    </div>
+                </div>
+                <div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+                            <div class="post-img">
+    							<img alt="altname" src="img/team/12.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">DR. EVIL</span>
+                            <p class="description">Empres&aacute;rio, terrorista e inimigo do Austin Powers</br></br>
+								<strong>PALESTRA: </strong>--
+							</p>
+							</br>						
+                            <span class="social">
+                                <a href="#" target="_blank" class="social-network  linkedin"></a>
+                                <a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>		
+					<div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+                            <div class="post-img">
+                                <img alt="altname" src="img/team/22.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">LEX LUTHOR</span>
+                            <p class="description">Empresário, magnata e arqui-inimigo do Superman </br></br>
+								<strong>PALESTRA: </strong>--
+							</p>
+							</br>
+                            <span class="social">
+								<a href="#" target="_blank" class="social-network  linkedin"></a>
+								<a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>		
+					<div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+                            <div class="post-img">
+                                <img alt="altname" src="img/team/32.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">TONY STARK</span>
+                            <p class="description">Homem de Ferro, cientista e empres&aacute;rio egoc&ecirc;ntrico </br></br>
+								<strong>PALESTRA: </strong>-- 
+							</p>
+                            </br>
+                            <span class="social">
+								<a href="#" target="_blank" class="social-network  linkedin"></a>
+								<a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>	
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+							<div class="post-img">
+                                <img alt="altname" src="img/team/42.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">DARTH VADER</span>
+                            <p class="description">Um cara de armadura preta com uma respira&ccedil;&atilde;o mec&acirc;nica barulhenta </br></br>
+								<strong>PALESTRA: </strong>--
+							</p>
+							</br>						
+                            <span class="social">
+								<a href="#" target="_blank" class="social-network  linkedin"></a>
+								<a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+							<div class="post-img">
+                                <img alt="altname" src="img/team/52.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">SPOCK</span>
+                            </br>
+                            <p class="description">Alien&iacute;gena e oficial comandante na nave USS Enterprise</br></br>
+								<strong>PALESTRA: </strong>--
+							</p>
+                            </br>
+                            <span class="social">
+                                <a href="#" target="_blank" class="social-network  linkedin"></a>
+                                <a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+							<div class="post-img">
+                                <img alt="altname" src="img/team/62.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">NICK FURY</span>
+                            <p class="description">Her&oacute;i de guerra, superespi&atilde;o e agente de elite da S.H.I.E.L.D </br></br>
+								<strong>PALESTRA: </strong>--
+							</p>
+							</br>								
+                            <span class="social">
+                                <a href="#" target="_blank" class="social-network  linkedin"></a>
+								<a href="#" target="_blank" class="social-network  twitter"></a>
+								<a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+							<div class="post-img">
+                                <img alt="altname" src="img/team/72.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">BRUCE WAYNE</span>
+                            </br>
+                            <p class="description">Presidente das Ind&uacute;strias Wayne e Batman nas horas vagas </br></br>
+								<strong>PALESTRA: </strong> --
+							</p>
+                            </br>
+                            <span class="social">
+                                <a href="#" target="_blank" class="social-network  linkedin"></a>
+                                <a href="#" target="_blank" class="social-network  twitter"></a>
+                                <a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="post">
+							<div class="post-img">
+                                <img alt="altname" src="img/team/82.jpg" class="img-circle img-responsible">
+                            </div>
+                            <span class="subject">DR. OCTOPUS</span>
+                            </br>
+                            <p class="description">Inventor, engenheiro e vil&atilde;o nos finais de semana </br></br>
+								<strong>PALESTRA: </strong> --
+							</p>
+                            </br>
+                            <span class="social">
+                                <a href="#" target="_blank" class="social-network  linkedin"></a>
+                                <a href="#" target="_blank" class="social-network  twitter"></a>
+                                <a href="#" target="_blank" class="social-network  facebook"></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="box">
+                      <a class="button" href="#">Submeter minha palestra!</a>    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END TEAM -->
+		
+        <!-- PLACE SECTION -->
+        <section id="place" class="slice color7">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2>Local</h2>
+                    </div>
+                </div>
+                <div class="row light-bg">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="box">
+                            <h4>Gran Continental Hotel</h4>
+                            <p>O Gran Continental Hotel, situado no Vale do Para&iacute;ba, entre a serra e o mar, pr&oacute;ximo &agrave; Aparecida e Campos do Jord&atilde;o, &eacute; considerado uns dos mais bem estruturados e bem localizados hot&eacute;is da regi&atilde;o. Al&eacute;m de possuir &oacute;timas acomoda&ccedil;&otilde;es, &eacute; tamb&eacute;m um hotel para neg&oacute;cios e lazer, contando com business center, sal&atilde;o de conven&ccedil;&otilde;es, salas de reuni&otilde;es, restaurante, terra&ccedil;o com hidro e ofur&ocirc;, sauna e fitness center.</p>
+                            <h4>Endere&ccedil;o</h4>
+							<address>		
+								<span id="map-input">
+								<p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;Rua Dr. Emílio Winther, 1390 - Jardim das Nacoes, Taubaté - SP,
+                                    <br /> 12030-001, Brasil</p>
+								</span>							
+							</address>
+							<h4>Contato para Hospedagem</h4>
+							<address>
+								<p><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;<a href="http://www.grancontinentalhotel.com.br/" target="_blank">www.grancontinentalhotel.com.br</a></p>
+								<p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;+55 (12) 2123-9300</p>
+							</address>
+						</div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="box-carousel">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="img/place/img1.jpg" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/place/img2.jpg" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/place/img3.jpg" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/place/img4.jpg" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/place/img5.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                  </a>
+                                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                  </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END PLACE -->
+		
+		<!-- MAP -->
+		  <div id="map-canvas"></div>	 
+		<!-- END MAP -->
+		
+		<!-- TICKETS SECTION -->
+		<section id="tickets" class="slice color8">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2>Inscri&ccedil;&otilde;es</h2>
+                    </div>
+                </div>
+                
+				<div class="row-plan row">
+					<!-- PRICETABLE-1 -->
+					<div class="col-plan col-sm-4">
+					  <div  class="wrapper-plan">
+						<h4 class="plan-header">INSCRI&Ccedil;&Atilde;O ESTUDANTE</h2>
+						<h3 class="plan-price">*R$100</h3>
+						<p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Participa&ccedil;&atilde;o no Evento (18, 19 e 20/09)</p>
+						<hr>
+						<p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Acesso Wi-fi &agrave; Internet</p>
+						<hr>
+						<p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;Hospedagem</br>(Check-in: 18/09; Check-out: 20/09)</p>
+						<hr>
+						<p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;3 Jantares (18, 19 e 20/09)</p>
+						<hr>
+						<p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;2 Almo&ccedil;os (19 e 20/09)</p>
+						<hr>
+						<p  class="plan-features"><strong>Vagas Dispon&iacute;veis: --</strong></p>
+						<a  class="plan-sign" href="https://www.sympla.com.br/yapcbr-2015---taubate__34954" target="_blank">>  COMPRAR</a>
+					  </div>
+					</div>
+					<!-- PRICETABLE-2 -->
+					<div class="col-plan col-sm-4">
+					  <div  class="wrapper-plan">
+						<h4 class="plan-header">INSCRI&Ccedil;&Atilde;O PROFISSIONAL</h2>
+						<h3 class="plan-price">*R$200</h3>
+						<p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Participa&ccedil;&atilde;o no Evento (18, 19 e 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Acesso Wi-fi &agrave; Internet</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;Hospedagem</br>(Check-in: 18/09; Check-out: 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;3 Jantares (18, 19 e 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-remove red"></span>&nbsp;&nbsp;2 Almo&ccedil;os (19 e 20/09)</p>
+                        <hr>
+						<p  class="plan-features"><strong>Vagas Dispon&iacute;veis: --</strong></p>
+						<a  class="plan-sign" href="https://www.sympla.com.br/yapcbr-2015---taubate__34954" target="_blank">>  COMPRAR</a>
+					  </div>
+					</div>
+					<!-- PRICETABLE-3 -->
+					<div class="col-plan col-sm-4">
+					  <div  class="wrapper-plan">
+						<h4 class="plan-header">INSCRI&Ccedil;&atilde;O FULL</h2>
+						<h3 class="plan-price">*R$600</h3>
+						<p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Participa&ccedil;&atilde;o no Evento (18, 19 e 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Acesso Wi-fi &agrave; Internet</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;Hospedagem</br>(Check-in: 18/09; Check-out: 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;3 Jantares (18, 19 e 20/09)</p>
+                        <hr>
+                        <p  class="plan-features"><span class="glyphicon glyphicon-ok green"></span>&nbsp;&nbsp;2 Almo&ccedil;os (19 e 20/09)</p>
+                        <hr>
+						<p  class="plan-features"><strong>Vagas Dispon&iacute;veis: --</strong></p>
+						<a  class="plan-sign" href="https://www.sympla.com.br/yapcbr-2015---taubate__34954" target="_blank">>  COMPRAR</a>
+					  </div>
+					</div>
+				</div>
+
+                <div class="col-sm-12 col-md-12">
+                    <p><strong>* Quer ganhar 10% de desconto na inscri&ccedil;&atilde;o?</strong> A inscri&ccedil;&atilde;o tamb&eacute;m pode ser realizada atrav&eacute;s de transfer&ecirc;ncia banc&aacute;ria, entrando em contato direto com os organizadores. Para isso, contate-nos pelo <strong>organizacao@yapcbrasil2015.org</strong>, informando os seguintes dados: <strong>Nome Completo, Endere&ccedil;o Completo, Tamanho de Camisa (P, M, G, GG, GGG) e Tipo de Inscri&ccedil;&atilde;o (Estudante, Profissional ou Full).</strong>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+		<!-- END TICKETS -->		
+		
+		<!-- SPONSORS SECTION -->
+        <section id="sponsors" class="slice color1">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2>patrocinadores</h2>
+                    </div>
+                </div>
+                <div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12"><div class="sponsor-box"><img src="img/sponsors/sponsor-gold.jpg" title="Patrocinador Ouro" width="100%" height="100%"></div></div>
+					<div class="col-md-4 col-sm-4 col-xs-12"><div class="sponsor-box"><img src="img/sponsors/sponsor-gold.jpg" title="Patrocinador Ouro" width="100%" height="100%"></div></div>
+					<div class="col-md-4 col-sm-4 col-xs-12"><div class="sponsor-box"><img src="img/sponsors/sponsor-gold.jpg" title="Patrocinador Ouro" width="100%" height="100%"></div></div>
+					<div class="col-md-3 col-sm-3 col-xs-6"><div class="sponsor-box"><img src="img/sponsors/sponsor-silver.jpg" title="Aware - Patrocinador Prata" width="100%" height="100%"></div></div>
+					<div class="col-md-3 col-sm-3 col-xs-6"><div class="sponsor-box"><img src="img/sponsors/sponsor-silver.jpg" title="Leis Municipais - Patrocinador Prata" width="100%" height="100%"></div></div>
+					<div class="col-md-3 col-sm-3 col-xs-6"><div class="sponsor-box"><img src="img/sponsors/sponsor-silver.jpg" title="Patrocinador Prata" width="100%" height="100%"></div></div>
+					<div class="col-md-3 col-sm-3 col-xs-6"><div class="sponsor-box"><img src="img/sponsors/sponsor-silver.jpg" title="Patrocinador Prata" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Bivee - Patrocinador Bronze" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Patrocinador Bronze" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Patrocinador Bronze" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Patrocinador Bronze" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Patrocinador Bronze" width="100%" height="100%"></div></div>
+					<div class="col-md-2 col-sm-2 col-xs-4"><div class="sponsor-box"><img src="img/sponsors/sponsor-bronze.jpg" title="Patrocinador Bronze" width="100%" height="100%"></div></div>												
+				</div>
+            </div>
+        </section>
+        <!-- END SPONSORS -->	
+		
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                         <h2 class="content-darkbg">CONTATO</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="centered col-sm-12 col-md-12">
+                        <p class="subtitle">para mais informa&ccedil;&otilde;es sobre o evento, </br>envie uma mensagem para o e-mail da comunidade</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 centered">
+                        <h2 class="email content-darkbg">organizacao@yapcbrasil2015.org</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END CONTACT -->
+			
+		<!-- FOOTER  -->
+        <div id="footer">
+
+		<!-- SOCIAL MODULE  --> 
+		<section id="social_module" class="slice">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<ul>
+							<li><a href="https://www.facebook.com/YapcBrasil" target=_blank><i class="icon icon-facebook"></i></a></li>
+							<li><a href="https://twitter.com/yapcbrasil" target=_blank><i class="icon icon-twitter"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<!-- END SOCIAL MODULE  -->
+
+			<!-- COPYRIGHT  -->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<p class="bottom-links text-center center">
+						<a href="#home">IN&Iacute;CIO</a> | <a href="#about">O EVENTO</a> | <a href="#team">O TIME</a> | <a href="#place">LOCAL</a> </br> <a href="#tickets">INSCRI&Ccedil;&Otilde;ES</a> | <a href="#sponsors">PATROCINADORES</a> | <a href="#contact">CONTATO</a> 
+						</p>
+						<p class="copyright text-center center">&copy; 2015 YAPC::Brasil </p>
+						<p class="copyright text-center center">Feito com <span class="glyphicon glyphicon-heart red"></span> pela <a href="http://www.bivee.com.br" target=_blank><img src="img/contact/logo_footer.png" style="width: 75px; padding-bottom: 5px"></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- END FOOTER  --> 
+		
+			<!-- JAVA SCRIPTS -->
+			<script src="js/jquery-2.1.0.min.js"></script>
+			<script src="js/modernizr.custom.js" type="text/javascript"></script> 
+			<script src="js/jquery.scrollto.js" type="text/javascript"></script>
+			<script src="js/waypoints.min.js" type="text/javascript"></script>
+			<script src="js/jquery.tweet.js" type="text/javascript"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed" type="text/javascript"></script>
+			<script src="js/custom.js" type="text/javascript"></script>
+			<script src="js/bootstrap.js"></script>
+			<script src="js/jquery.fancybox.pack.js" type="text/javascript"></script>
+			<script src="js/jquery.fancybox-media.js?v=1.0.0" type="text/javascript"></script>
+			<script src="js/loop.min.js"></script>        
+        </section>
+    </body>
+</html>
