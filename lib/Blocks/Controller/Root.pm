@@ -157,7 +157,7 @@ sub _render{
     if ( $block->type() eq 'markdown' ){
         return $self->_div( $c, $block );
     }
-    if ( $block->type() eq 'raw' ) {
+    if ( $block->type() eq 'raw' || $block->type() eq 'html') {
         return $block->content();
     }
     else{

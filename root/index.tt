@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/static/blocks.css" type="text/css">
         <script src="/static/blocks.js"></script>
-        <script src="//cdn.ckeditor.com/4.4.7/standard/ckeditor.js"></script>
+         <script src="//cdn.ckeditor.com/4.5.0/full/ckeditor.js"></script>
     </head>
     <body>
         <div id="main">
