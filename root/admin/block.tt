@@ -41,9 +41,14 @@
             <li>
                 <input type="hidden" name="idblock" value="[% block.idblock %]">
             </li>
-            <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
+            <textarea id="editor" name="content" rows="30" cols="60">[% block.content %]</textarea>
             [% IF block.type == "html" %]
             <script> CKEDITOR.replace( 'content' ); </script>
+            [% ELSE %]
+            <script>
+            var content = CodeMirror.fromTextArea(document.getElementById("editor"), {
+                mode: { name: "content", globalVars: true } });
+            </script>
             [% END %]
         </ul>
     </form>

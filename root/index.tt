@@ -5,7 +5,10 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/static/blocks.css" type="text/css">
         <script src="/static/blocks.js"></script>
-         <script src="//cdn.ckeditor.com/4.5.0/full/ckeditor.js"></script>
+        <script src="//cdn.ckeditor.com/4.5.0/full/ckeditor.js"></script>
+        <script src="/static/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="/static/lib/codemirror.css">
+        <script src="/static/mode/javascript/javascript.js"></script>
     </head>
     <body>
         <div id="main">
