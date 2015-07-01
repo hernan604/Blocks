@@ -7,9 +7,21 @@
     <ul>
 [% FOREACH block IN blocks %]
     <li>
-        <a href="/admin/block/[% block.idblock %]">
-        [% block.title %]
+        <h4>
+        <a href="/block/[% block.idblock %]">
+        [% block.title || "No title" %]
         </a>
+        </h4>
+        [% FOREACH language IN block.languages %]
+        <a href="/admin/block/[% language.linked_block %]">
+            - <b>[% language.language %]</b>
+        </a>
+        [% END %]
+        <span>
+            <a href="/admin/block/[% block.idblock %]">
+                Edit
+            </a>
+        </span>
     </li>
 [% END %]
     </ul>

@@ -47,7 +47,15 @@ sub blocks_GET {
 
     my $block_rs = $c->model( 'Blocks::Block' );
 
-    my @blocks = $block_rs->search({},{ rows => 30 });
+    my $languages_rs = $c->model( 'Blocks::Language' );
+
+    # order by timestamp DESC
+    my @blocks = $block_rs->search({},{ rows => 50, order_by => [ "timestamp DESC" ] });
+
+    # I miss the foreign key
+    for my $block ( @blocks ) {
+        push @{ $block->{ languages } }, $languages_rs->search( { idblocks => $block->idblock() } );
+    }
 
     $c->stash( blocks => \@blocks );
 
@@ -59,9 +67,13 @@ sub blocks_POST {
     my $param = $c->request->param("title");
 
     my $block_rs = $c->model( 'Blocks::Block' );
+    my $languages_rs = $c->model( 'Blocks::Language' );
 
     my @blocks = $block_rs->search({ title => { like => $param } });
-
+    # I miss the foreign key
+    for my $block ( @blocks ) {
+        push @{ $block->{ languages } }, $languages_rs->search( { idblocks => $block->idblock() } );
+    }
     $c->stash( blocks => \@blocks );
 }
 
@@ -145,6 +157,7 @@ sub languages_POST :Args(1) {
 
     my ( $block, $lang );
 
+    # TODO clone the block content form older block for reference
     $block = $block_rs->create({
         title => $arg,
         content => undef,

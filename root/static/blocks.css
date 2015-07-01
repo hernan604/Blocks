@@ -36,6 +36,23 @@ html
     display: inline;
 }
 
+#languages
+{
+    float: left;
+    width: 30em;
+}
+
+#tagsblocks
+{
+    float: left;
+    width: 30em;
+}
+
+#_block_editor
+{
+    float: left;
+}
+
 ._blocks_list ul
 {
     list-style-type: none;
@@ -46,6 +63,46 @@ html
     padding-left: 1em;
     color: #000;
     font-family: Sans-serif, serif;
+    width: 100%;
+    margin: 0.5em 1em 0.5em 0em;
+}
+
+._blocks_list ul li h4
+{
+    color: #000;
+    font-family: Sans-serif, serif;
+    font-size: 1.2em;
+    padding: 0px 0px 0px 0px;
+    margin: 0.2em 1em 0.2em 0em;
+    display: inline;
+}
+
+._blocks_list ul li span
+{
+    display: block;
+    background-color: #DDD;
+    margin-left: 3em;
+    margin-top: 0.5em;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+}
+
+.formtitle
+{
+    transition: all 0.3s ease-in-out 0s;
+    font-size: 2em;
+}
+
+._blocks_editor_menu ul
+{
+    width: 100%;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+._blocks_editor_menu li 
+{
+    display: inline;
+    witdh: initial;
 }
 
 ._blocks_tags ul
@@ -108,3 +165,4 @@ html
 {
     position: relative;
 }
+

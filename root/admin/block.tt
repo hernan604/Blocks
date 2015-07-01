@@ -1,51 +1,57 @@
+
 [% WRAPPER index.tt title = "Block Admin" %]
 
 [% INCLUDE admin/blocks_nav.tt %]
 
-
-<div class="_block_editor">
-    <script>loadLanguages([% block.idblock %])</script>
-    <div class="_blocks_list" id="languages">
-    </div>
+<div id="_block_editor">
     <form class="_blocks_list" id="blockeditor" METHOD="POST">
         <ul>
-            <li>
-                <button onclick="doPreview();">Preview</button>
+            <li class="_blocks_editor_menu">
+                <ul>
+                    <li>
+                        Block Type:
+                        <select name="type">
+                            <option value="markdown" [% IF block.type == "markdown" %]selected[% END %]>
+                                Markdown
+                            </option>
+                            <option value="blocks" [% IF block.type == "blocks" %]selected[% END %]>
+                                Blocks
+                            </option>
+                            <option value="raw" [% IF block.type == "raw" %]selected[% END %]>
+                                Raw
+                            </option>
+                        </select>
+                    </li>
+                    <li>
+                        <button onclick="doPreview();">Preview</button>
+                    </li>
+                    <li>
+                        <input type="submit" name="edit" 
+                            onclick="document.pressed=this.value" value="Save">
+                    </li>
+                </ul>
             </li>
             <li>
-                type:
-                <select name="type">
-                    <option value="markdown" [% IF block.type == "markdown" %]selected[% END %]>
-                        Markdown
-                    </option>
-                    <option value="blocks" [% IF block.type == "blocks" %]selected[% END %]>
-                        Blocks
-                    </option>
-                    <option value="raw" [% IF block.type == "raw" %]selected[% END %]>
-                        Raw
-                    </option>
-                </select>
-            </li>
-            <li>
-                Title:
-                <input type="text" name="title"
+                <input type="text" name="title" class="formtitle"
                 value="[% block.title %]">
             </li>
             <li>
-                Content:
-            </li>
-            <li>
-                <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
-            </li>
-            <li>
                 <input type="hidden" name="idblock" value="[% block.idblock %]">
-                <input type="submit" name="edit" onclick="document.pressed=this.value" value="Save">
             </li>
+            <textarea name="content" rows="30" cols="60">[% block.content %]</textarea>
+            [% IF block.type == "raw" %]
+            <script> CKEDITOR.replace( 'content' ); </script>
+            [% END %]
         </ul>
     </form>
-    <script>load("tagsblocks",[% block.idblock %])</script>
-    <div class="_blocks_tags" id="tagsblocks">
-    </div>
 </div>
 
+<div class="_blocks_list" id="languages">
+</div>
+
+<div class="_blocks_tags" id="tagsblocks">
+</div>
+
+<script>loadLanguages([% block.idblock %])</script>
+<script>load("tagsblocks",[% block.idblock %])</script>
 [% END %]

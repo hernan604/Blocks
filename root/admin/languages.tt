@@ -1,13 +1,15 @@
 <ul>
     <li>
-        Languages for this block id: [% idblock %]
-    </li>
-    <li>
         <form action="/admin/languages/[% idblock %]" method="POST">
             <input type="text" name="language" value="">
-            <input type="submit" value="New Language">
+            <input type="submit" value="Add new language">
         </form>
     </li>
+    [% IF languages.size == 0 %]
+    <li>
+        Only Default Language ( English )
+    </li>
+    [% END %]
 [% FOREACH language IN languages %]
     <li>
         <a href="/admin/block/[% language.idblocks %]">
