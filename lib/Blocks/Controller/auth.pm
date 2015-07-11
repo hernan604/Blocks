@@ -95,7 +95,7 @@ reset the password at Blocks CMS application.
 
 Should be fine, it is just a matter of follow this link:
 
-    http://devel.imovlr.com:3000/auth/recover?token=$token
+    http://yapcbrasil2015.org/auth/recover?token=$token
 
 Then set your new password.
 
