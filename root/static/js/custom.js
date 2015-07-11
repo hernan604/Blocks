@@ -49,7 +49,7 @@ $(window).load(function() {
 });*/
 
 /* -- 03. SCROLL TO  -- */
-$('ul.nav a, #down_button a, .button, .bottom-links a').click(function(e) {
+$('ul.nav a, #down_button a, .bottom-links a').click(function(e) {
     $('html,body').scrollTo(this.hash, this.hash);
     e.preventDefault();
 });

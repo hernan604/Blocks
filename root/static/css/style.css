@@ -105,11 +105,11 @@ h2 {
 }
 
 .breaker .spheres {
-    background:url(../img/spheres.png) no-repeat;
+    background:url(/static/img/spheres.png) no-repeat;
 }
 
 .breaker .spheres-negative {
-    background:url(../img/spheres-negative.png) no-repeat;
+    background:url(/static/img/spheres-negative.png) no-repeat;
 }
 
 .breaker span {
@@ -243,7 +243,7 @@ h2 {
     width:100%;
     height:100%;
     background-color:#2c3e50;
-    background:url('../img/background.jpg') no-repeat center center; 
+    background:url('/static/img/background.jpg') no-repeat center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -254,7 +254,7 @@ h2 {
 .pattern {
 	width: 100%;
 	height:100%;
-	background: url('../img/pattern.png') repeat;
+	background: url('/static/img/pattern.png') repeat;
 }
 
 .color1 {
@@ -357,12 +357,12 @@ text-decoration: none;
 }
 
 .polygon-black {
-background: url(../img/contact/shattered.jpg) repeat;
+background: url(/static/img/contact/shattered.jpg) repeat;
 background-color: #232527;
 }
 
 .color5 {
-	background: url(../img/contact/shattered.jpg) repeat;
+	background: url(/static/img/contact/shattered.jpg) repeat;
 	background-color: #232527;
 }
 
@@ -559,14 +559,14 @@ line-height: 30px;
 }
 
 .little-logo {
-background: url(../img/logo_footer.png) center center;
+background: url(/static/img/logo_footer.png) center center;
 width: 75px;
 background-repeat: no-repeat;
 position: relative;
 }
 
 .logo {
-background: url(../img/simbol.png) center;
+background: url(/static/img/simbol.png) center;
 background-size: cover;
 width: 30%;
 height: 20%;
@@ -581,7 +581,7 @@ position: absolute;
 }
 
 .content {
-background: url(../img/logo-label.png) center;
+background: url(/static/img/logo-label.png) center;
 background-size: cover;
 width: 100%;
 height: 55%;
@@ -610,7 +610,7 @@ position: absolute;
     bottom: 5%; 
     left: 50%; 
     margin-left: -40px;
-    background: url("../img/down.png") no-repeat; 
+    background: url("/static/img/down.png") no-repeat; 
     background-position: 0px -80px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -979,11 +979,11 @@ color: #eb616b;
 /* CONTACT*/
 
 .dark-bg {
-background: url(../img/contact/bg-dark.jpg) repeat !important;
+background: url(/static/img/contact/bg-dark.jpg) repeat !important;
 }
 
 .darkest-bg {
-background: url(../img/howwedo/bg-darkest.jpg) repeat !important;
+background: url(/static/img/howwedo/bg-darkest.jpg) repeat !important;
 }
 
 .email{
@@ -1089,7 +1089,7 @@ background: url(../img/howwedo/bg-darkest.jpg) repeat !important;
 }
 
 .whereweare {
-background: url(../img/contact/whereweare.png) center;
+background: url(/static/img/contact/whereweare.png) center;
 background-size: cover;
 width: 400px;
 height: 224px;
@@ -1099,11 +1099,11 @@ background-size: contain;
 background-repeat: no-repeat;
 }
 
-.contactAddress {background: url("../img/contact/icon-address-grey.png") no-repeat scroll left 7px transparent;}
-.contactPhone {background: url("../img/contact/icon-phone-grey.png") no-repeat scroll left 7px transparent;}
-.contactEmail {background: url("../img/contact/icon-email-grey.png") no-repeat scroll left 9px transparent;}
-.contactSkype {background: url("../img/contact/icon-skype-grey.png") no-repeat scroll left 7px transparent;}
-.contactTime {background: url("../img/contact/icon-time-grey.png") no-repeat scroll left 7px transparent;}
+.contactAddress {background: url("/static/img/contact/icon-address-grey.png") no-repeat scroll left 7px transparent;}
+.contactPhone {background: url("/static/img/contact/icon-phone-grey.png") no-repeat scroll left 7px transparent;}
+.contactEmail {background: url("/static/img/contact/icon-email-grey.png") no-repeat scroll left 9px transparent;}
+.contactSkype {background: url("/static/img/contact/icon-skype-grey.png") no-repeat scroll left 7px transparent;}
+.contactTime {background: url("/static/img/contact/icon-time-grey.png") no-repeat scroll left 7px transparent;}
 
 #contact .info a {
     color:#d14836;
@@ -1187,7 +1187,7 @@ background-repeat: no-repeat;
     font-size:16px;}
 
 .tweet_list li::before {
-    content: url(../img/littletweet.png);}
+    content: url(/static/img/littletweet.png);}
 
 .tweet_list li img {
     margin-bottom:-2px;}
@@ -1324,7 +1324,7 @@ text-decoration: none;
 #fancybox-loading div {
     width: 24px !important;
     height: 24px !important;
-    background-image: url(../img/fancybox/fancy-loading.gif) !important;
+    background-image: url(/static/img/fancybox/fancy-loading.gif) !important;
 }
 
 .project {
@@ -1391,7 +1391,7 @@ text-decoration: none;
     right:0;
     top:40%;
     text-align:center;
-    background: url('../img/share.png') no-repeat center;
+    background: url('/static/img/share.png') no-repeat center;
     height: 33px;
     width: 32px;
     opacity:0;
@@ -1468,7 +1468,7 @@ text-decoration: none;
 /* --------------------------------------------------------	*/
 .social-network {
     display:inline-block;
-    background:url(../img/social-networks-2.png) no-repeat top left;
+    background:url(/static/img/social-networks-2.png) no-repeat top left;
     width:24px;
     height:24px;
     background-position-y:0;
@@ -1483,7 +1483,7 @@ text-decoration: none;
 }
 
 .sn2 {
-    background:url(../img/social-networks.png) no-repeat top left;
+    background:url(/static/img/social-networks.png) no-repeat top left;
 }
 
 /* Normal */
