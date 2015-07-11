@@ -90,7 +90,7 @@ sub paper_POST {
     my $block_rs = $c->model('Blocks::Block');
 
     my $block = $block_rs->create({
-        title => $title,
+        title => "paper:" . $title,
         content => join ("\n", $email, $content ),
     });
 
