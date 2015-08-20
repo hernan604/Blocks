@@ -45,9 +45,6 @@ sub index :Path :Args(0) {
         });
     }else {
         #$c->response->body( Dumper $c->config );
-        if ( $c->user() ) {
-        }else{
-        }
         my $blocks_rs = $c->model( "Blocks::Block" );
         my @blocks = $blocks_rs->search({ title => "Hotline miami" });
 
